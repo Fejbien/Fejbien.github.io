@@ -38,6 +38,7 @@ nav ul {
 }
 
 article {
+    overflow: auto;
     float: left;
     padding: 20px;
     width: 90%;
