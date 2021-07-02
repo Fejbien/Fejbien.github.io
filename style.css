@@ -48,19 +48,33 @@ article {
     color: #f8f9fa;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 
 /* Links */
 
 a {
-    color: #ced4da;
     text-decoration: none;
 }
 
-a:hover {
+nav a {
+    color: #ced4da;
+}
+
+nav a:hover {
     color: #f8f9fa;
-    text-decoration: none;
     font-size: larger;
     font-weight: bold;
+}
+
+article a {
+    color: #eeeff0;
+}
+
+article a:hover {
+    color: #212529;
 }
 
 
