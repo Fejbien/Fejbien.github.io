@@ -110,10 +110,11 @@ article a:hover {
     nav,
     article {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
     nav {
         text-align: center;
+        height: 100%;
     }
     #iframe {
         float: none;
