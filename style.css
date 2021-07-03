@@ -2,14 +2,20 @@
     box-sizing: border-box;
 }
 
+
+/* body */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #212529;
     font-size: 20px;
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: #495057;
 }
+
+
+/* Tytuł strony */
 
 #header {
     background-color: #212529;
@@ -19,14 +25,16 @@ body {
     color: white;
 }
 
-#navandart {
-    background-color: white;
-}
+
+/* Iframe narazie sam discord */
 
 iframe {
     float: right;
     position: sticky;
 }
+
+
+/* Panel nawigacyjny */
 
 nav {
     float: left;
@@ -42,6 +50,9 @@ nav ul {
     padding: 0;
 }
 
+
+/* Ustawienia artykułu */
+
 article {
     overflow: auto;
     float: left;
@@ -54,16 +65,19 @@ article {
     color: #f8f9fa;
 }
 
-h2 {
+article h1 {
     font-size: 40px;
 }
+
+
+/* Tekst */
 
 p {
     font-size: 20px;
 }
 
 
-/* Links */
+/* Linki */
 
 a {
     text-decoration: none;
