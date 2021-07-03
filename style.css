@@ -23,6 +23,11 @@ body {
     background-color: white;
 }
 
+#iframe {
+    float: right;
+    position: static;
+}
+
 nav {
     float: left;
     color: #f8f9fa;
@@ -93,5 +98,9 @@ article a:hover {
     }
     nav {
         text-align: center;
+    }
+    #iframe {
+        float: none;
+        width: 100%;
     }
 }
