@@ -23,7 +23,7 @@ body {
     background-color: white;
 }
 
-#iframe {
+iframe {
     float: right;
     position: static;
 }
