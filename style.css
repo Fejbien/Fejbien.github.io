@@ -53,6 +53,10 @@ h2 {
     font-size: 40px;
 }
 
+p {
+    font-size: 20px;
+}
+
 
 /* Links */
 
@@ -86,5 +90,8 @@ article a:hover {
     article {
         width: 100%;
         height: auto;
+    }
+    nav {
+        text-align: center;
     }
 }
