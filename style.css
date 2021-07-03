@@ -114,9 +114,6 @@ article a:hover {
         text-align: center;
         padding: 1px;
     }
-    article {
-        height: 100%;
-    }
     #iframe {
         float: none;
         width: 100%;
