@@ -9,8 +9,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     height: 100vh;
-    /* Fallback for browsers that do not support Custom Properties */
-    /*height: calc(var(--vh, 1vh) * 100);*/
     margin: 0;
     padding: 0;
     background-color: #495057;
@@ -114,6 +112,9 @@ article a:hover {
     }
     nav {
         text-align: center;
+        padding: 1px;
+    }
+    article {
         height: 100%;
     }
     #iframe {
