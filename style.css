@@ -115,7 +115,7 @@ article a:hover {
 
 /* Response */
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     nav,
     article {
         width: 100%;
