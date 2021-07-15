@@ -1,64 +1,95 @@
-* {
-    box-sizing: border-box;
+:root {
+    /*        */
+    /* COLORS */
+    /* Body */
+    --BodyBackGround: #495057;
+    /* Header */
+    --HeaderTextColor: white;
+    --HeaderBackGround: #212529;
+    /* Navigation */
+    --NavigationTextColor: #f8f9fa;
+    --NavigationBackGround: #343a40;
+    /* Navigation Links */
+    --NavigationLinkColor: #ced4da;
+    --NavigationLinkColorHover: #f8f9fa;
+    /* Article */
+    --ArticleTextColor: #f8f9fa;
+    --ArticleBackGround: #495057;
+    /* Article Links */
+    --ArticleLinkColor: #eeeff0;
+    --ArticleLinkColorHover: #212529;
+    /*      */
+    /* SIZES */
+    /* Body */
+    --BodyFontSize: 20px;
+    /* Header */
+    --HeaderFontSize: 15px;
+    --HeaderPadding: 5px;
+    /* Discord */
+    --DiscordWidth: 350px;
+    --DiscordHeight: 500px;
+    /* Navigation */
+    --NavigationWidth: 10%;
+    --NavigationHeight: 100%;
+    --NavigationPadding: 20px;
+    /* Navigation List */
+    --NavigationListPadding: 0;
+    /* Article */
+    --ArticlePadding: 20px;
+    --ArticleWidth: 90%;
+    --ArticleMinHeight: 300px;
+    --ArticleHeight: 100%;
+    /* Article H1 */
+    --ArticleH1FontSize: 40px;
+    /* MISC */
+    --MiscPFontSize: 20px;
 }
 
-
-/* Poprawia działanie strony na telefonie nie ruszac ;) */
-
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+* {
+    box-sizing: border-box;
 }
 
 html {
     height: -webkit-fill-available;
 }
 
-
-/* body */
-
 body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    /*height: 100vh; Najwidoczniej nie trzeba na gorze jest czemu ;)  */
+    font-size: var(--BodyFontSize);
     margin: 0;
     padding: 0;
-    background-color: #495057;
+    background-color: var(--BodyBackGround);
 }
 
-
-/* Tytuł strony */
-
 #header {
-    background-color: #212529;
-    padding: 5px;
+    background-color: var(--HeaderBackGround);
+    padding: var(--HeaderPadding);
     text-align: center;
-    font-size: 15px;
-    color: white;
+    font-size: var(--HeaderFontSize);
+    color: var(--HeaderTextColor);
 }
 
 #discord {
     float: right;
     position: sticky;
-    width: 350px;
-    height: 500px;
+    width: var(--DiscordWidth);
+    height: var(--DiscordHeight);
 }
-
-
-/* Panel nawigacyjny */
 
 nav {
     float: left;
-    color: #f8f9fa;
-    width: 10%;
-    background: #343a40;
-    padding: 20px;
-    height: 100%;
+    color: var(--NavigationTextColor);
+    width: var(--NavigationWidth);
+    background: var(--NavigationBackGround);
+    padding: var(--NavigationPadding);
+    height: var(--NavigationHeight);
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: var(--NavigationListPadding);
 }
 
 
@@ -67,24 +98,24 @@ nav ul {
 article {
     overflow: auto;
     float: left;
-    padding: 20px;
-    width: 90%;
-    background-color: #495057;
-    min-height: 300px;
-    height: 100%;
+    padding: var(--ArticlePadding);
+    width: var(--ArticleWidth);
+    background-color: var(--ArticleBackGround);
+    min-height: var(--ArticleMinHeight);
+    height: var(--ArticleHeight);
     word-wrap: break-word;
-    color: #f8f9fa;
+    color: var(--ArticleTextColor);
 }
 
 article h1 {
-    font-size: 40px;
+    font-size: var(--ArticleH1FontSize);
 }
 
 
 /* Tekst */
 
 p {
-    font-size: 20px;
+    font-size: var(--MiscPFontSize);
 }
 
 
@@ -95,25 +126,22 @@ a {
 }
 
 nav a {
-    color: #ced4da;
+    color: var(--NavigationLinkColor);
 }
 
 nav a:hover {
-    color: #f8f9fa;
+    color: var(--NavigationLinkColorHover);
     font-size: larger;
     font-weight: bold;
 }
 
 article a {
-    color: #eeeff0;
+    color: var(--ArticleLinkColor);
 }
 
 article a:hover {
-    color: #212529;
+    color: var(--ArticleLinkColorHover);
 }
-
-
-/* Response */
 
 @media (max-width: 1300px) {
     nav,
@@ -123,7 +151,7 @@ article a:hover {
     }
     nav {
         text-align: center;
-        padding: 1px;
+        padding: 0px;
     }
     #discord {
         float: none;
