@@ -111,6 +111,12 @@ article h1 {
     font-size: var(--ArticleH1FontSize);
 }
 
+#tictactoe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 
 /* Tekst */
 

@@ -1,6 +1,6 @@
 window.onload = load;
 window.onresize = resize;
-window.addEventListener('resize', resize);
+
 
 function resize() {
     document.getElementById("navandart").style.height = "0px";
