@@ -1,12 +1,12 @@
 window.onload = load;
-window.onresize = resize;
+window.onresize = resizeBody;
 
-function resize() {
+function resizeBody() {
     document.getElementById("siteBody").style.height = "0px";
     var wielkosc = (document.body.clientHeight - document.getElementsByClassName("header")[0].offsetHeight);
     document.getElementById("siteBody").style.height = wielkosc + "px";
 }
 
 function load() {
-    resize();
+    resizeBody();
 }
