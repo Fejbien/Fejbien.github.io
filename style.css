@@ -1,50 +1,3 @@
-:root {
-    /*        */
-    /* COLORS */
-    /* Body */
-    --BodyBackGround: #495057;
-    /* Header */
-    --HeaderTextColor: white;
-    --HeaderBackGround: #212529;
-    /* Navigation */
-    --NavigationTextColor: #f8f9fa;
-    --NavigationBackGround: #343a40;
-    /* Navigation Links */
-    --NavigationLinkColor: #ced4da;
-    --NavigationLinkColorHover: #f8f9fa;
-    /* Article */
-    --ArticleTextColor: #f8f9fa;
-    --ArticleBackGround: #495057;
-    /* Article Links */
-    --ArticleLinkColor: #eeeff0;
-    --ArticleLinkColorHover: #212529;
-    /*      */
-    /* SIZES */
-    /* Body */
-    --BodyFontSize: 20px;
-    /* Header */
-    --HeaderFontSize: 15px;
-    --HeaderPadding: 5px;
-    /* Discord */
-    --DiscordWidth: 350px;
-    --DiscordHeight: 500px;
-    /* Navigation */
-    --NavigationWidth: 10%;
-    --NavigationHeight: 100%;
-    --NavigationPadding: 20px;
-    /* Navigation List */
-    --NavigationListPadding: 0;
-    /* Article */
-    --ArticlePadding: 20px;
-    --ArticleWidth: 90%;
-    --ArticleMinHeight: 300px;
-    --ArticleHeight: 100%;
-    /* Article H1 */
-    --ArticleH1FontSize: 40px;
-    /* MISC */
-    --MiscPFontSize: 20px;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -57,58 +10,50 @@ body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: var(--BodyFontSize);
+    font-size: 20px;
     margin: 0;
     padding: 0;
-    background-color: var(--BodyBackGround);
+    background-color: #495057;
 }
 
 #header {
-    background-color: var(--HeaderBackGround);
-    padding: var(--HeaderPadding);
+    background-color: #212529;
+    padding: 5px;
     text-align: center;
-    font-size: var(--HeaderFontSize);
-    color: var(--HeaderTextColor);
+    font-size: 15px;
+    color: white;
 }
 
-#discord {
-    float: right;
-    position: sticky;
-    width: var(--DiscordWidth);
-    height: var(--DiscordHeight);
-}
 
 nav {
     float: left;
-    color: var(--NavigationTextColor);
-    width: var(--NavigationWidth);
-    background: var(--NavigationBackGround);
-    padding: var(--NavigationPadding);
-    height: var(--NavigationHeight);
+    color: #f8f9fa;
+    width: 10%;
+    background: #343a40;
+    padding: 20px;
+    height: 100%;
 }
 
 nav ul {
     list-style-type: none;
-    padding: var(--NavigationListPadding);
+    padding:  0;
 }
 
-
-/* Ustawienia artykułu */
 
 article {
     overflow: auto;
     float: left;
-    padding: var(--ArticlePadding);
-    width: var(--ArticleWidth);
-    background-color: var(--ArticleBackGround);
-    min-height: var(--ArticleMinHeight);
-    height: var(--ArticleHeight);
+    padding: 20px;
+    width: 90%;
+    background-color: #495057;
+    min-height: 300px;
+    height: 100%;
     word-wrap: break-word;
-    color: var(--ArticleTextColor);
+    color: #f8f9fa;
 }
 
 article h1 {
-    font-size: var(--ArticleH1FontSize);
+    font-size: 40px;
 }
 
 #tictactoe {
@@ -121,7 +66,7 @@ article h1 {
 /* Tekst */
 
 p {
-    font-size: var(--MiscPFontSize);
+    font-size: 20px;
 }
 
 
@@ -132,21 +77,21 @@ a {
 }
 
 nav a {
-    color: var(--NavigationLinkColor);
+    color: #ced4da;
 }
 
 nav a:hover {
-    color: var(--NavigationLinkColorHover);
+    color: #f8f9fa;
     font-size: larger;
     font-weight: bold;
 }
 
 article a {
-    color: var(--ArticleLinkColor);
+    color: #eeeff0;
 }
 
 article a:hover {
-    color: var(--ArticleLinkColorHover);
+    color: #212529;
 }
 
 @media (max-width: 1300px) {
