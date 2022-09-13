@@ -16,8 +16,10 @@ body {
     background-color: #495057;
 }
 
-canvas{
-    text-align: center;
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
 }
 
 p {
