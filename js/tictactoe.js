@@ -83,7 +83,7 @@ function draw(){
             textSize(sizeCell/3);
             textAlign(CENTER, CENTER);
             fill('white');
-            text('Winner is:\n'+winner+'\n\nClick to play!', sizeBox/2, sizeBox/2 - sizeBox/5)
+            text('Winner is:\n'+winner.toLocaleUpperCase()+'\n\nClick to play!', sizeBox/2, sizeBox/2 - sizeBox/5)
             break;
     }
 }
