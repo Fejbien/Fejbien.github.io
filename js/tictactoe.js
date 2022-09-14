@@ -13,21 +13,27 @@ let sizeBox
 let sizeCell
 let r
 
+let AI;
+let Player;
+
 const charX = 'x'
 const charO = 'o'
 
-let winner = ''
+let winner = ' '
 let currentMove = charX
 let board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
   ];
 
 function setup(){
     let cnv = createCanvas(400,400);
     cnv.parent('canvasLocation');
     windowResized();
+
+    Player = charX;
+    AI = charO;
 }
 
 function windowResized() {
@@ -56,22 +62,34 @@ function draw(){
             break;
 
         case States.Game:
-            // Background color
             background('#495057');
 
-            // Mouse position
-            /*
-            text(mouseX, 0, sizeBox/4)
-            text(mouseY, 0, sizeBox/2)
-            */
+            if(currentMove == AI){
+                let temp = NajlepszyRuch(board)
+                //console.log("tempX:" + tempX)
+                //console.log("tempY:" + tempY)
+                board[temp[1]][temp[0]] = currentMove;
+                drawBoard();
 
-            // Bounding box
-            /*
-            line(0, 0, 0, sizeBox)
-            line(0, 0, sizeBox, 0)
-            line(sizeBox, sizeBox, 0, sizeBox)
-            line(sizeBox, sizeBox, sizeBox, 0)
-            */
+                if(checkWin()){
+                    winner = currentMove
+                    currentState = States.End
+                    drawBoard();
+                    return;
+                }
+
+                if(currentMove == charX){
+                    currentMove = charO
+                }
+                else{
+                    currentMove = charX
+                }
+            }
+
+            
+            if(KoniecGry(board)){
+                currentState = States.End
+            }
 
             strokeWeight(4)
             drawLines()
@@ -83,6 +101,8 @@ function draw(){
             textSize(sizeCell/3);
             textAlign(CENTER, CENTER);
             fill('white');
+
+            if(KoniecGry(board)) winner = "none"
             text('Winner is:\n'+winner.toLocaleUpperCase()+'\n\nClick to play!', sizeBox/2, sizeBox/2 - sizeBox/5)
             break;
     }
@@ -134,7 +154,10 @@ function mousePressed() {
             let i = floor(mouseX / sizeCell);
             let j = floor(mouseY / sizeCell);
         
-            if (board[j][i] != '') return;
+
+            if (currentMove != Player) return;
+
+            if (board[j][i] != ' ') return;
         
             board[j][i] = currentMove
         
@@ -153,6 +176,16 @@ function mousePressed() {
             break;
             
         case States.End:
+            let temp = Player;
+            Player = AI;
+            AI = temp;
+
+            currentMove = charX;
+
+            console.log("Pl" + Player)
+            console.log("AI" + AI)
+            console.log("curr" + currentMove)
+
             restartBoard()
             currentState = States.Game
             break;
@@ -180,7 +213,120 @@ function checkWin(){
 function restartBoard(){
     for(let i = 0; i < 3; i++){
         for (let j = 0; j < 3; j++){
-            board[i][j] = ''
+            board[i][j] = ' '
         }
     }
+}
+
+function MiniMax(_plansza, maksymalizuj, dalekosc)
+{
+    var plansza = _plansza.map(function(arr) {
+        return arr.slice();
+    });
+
+
+    if (SprawdzenieWygranejDanegoZnaku(plansza, AI))
+        return 10;
+    else if (SprawdzenieWygranejDanegoZnaku(plansza, Player))
+        return -10;
+    else if (KoniecGry(plansza))
+        return 0;
+
+    if(maksymalizuj)
+    {
+        let maks = -1000;
+        for (let i = 0; i < 3; i++)
+        {
+            for (let j = 0; j < 3; j++)
+            {
+                if (plansza[i][j] == ' ')
+                {
+                    let zwrotna = MiniMax(ZrobRuchWMiejscu(plansza, j, i, AI), false, dalekosc + 1);
+                    maks = Math.max(maks, zwrotna - dalekosc);
+                }
+            }
+        }
+        return maks;
+    }
+    else
+    {
+        let min = 1000;
+        for (let i = 0; i < 3; i++)
+        {
+            for( let j = 0; j < 3; j++){
+                if (plansza[i][j]== ' ')
+                {
+                    let zwrotna = MiniMax(ZrobRuchWMiejscu(plansza, j, i, Player), true, dalekosc + 1);
+                    min = Math.min(min, zwrotna);
+                }
+            }
+        }
+        return min;
+    }
+}
+
+function ZrobRuchWMiejscu(_plansza, x, y, charr)
+{
+    var plansza = _plansza.map(function(arr) {
+        return arr.slice();
+    });
+
+    plansza[y][x] = charr;
+    return plansza;
+}
+
+function NajlepszyRuch(_plansza)
+{
+    let maks = -1000;
+    let x = 0;
+    let y = 0;
+    var plansza = _plansza.map(function(arr) {
+        return arr.slice();
+    });
+
+    for (let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            if (plansza[i][j] == ' ')
+            {
+                let zwrotna = MiniMax(ZrobRuchWMiejscu(plansza, j, i, AI), false, 0);
+                if (zwrotna > maks)
+                {
+                    maks = zwrotna;
+                    x = j;
+                    y = i
+                }
+            }
+        }
+    }
+    return [x, y]
+}
+
+function KoniecGry(_plansza)
+{
+    for (let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            if (_plansza[i][j] == ' ')
+                return false;
+        }
+    }
+
+    return true;
+}
+
+function SprawdzenieWygranejDanegoZnaku(_plansza, _char){
+    o = _char
+    if (// -
+        o == _plansza[0][0] && o == _plansza[0][1] && o == _plansza[0][2] ||
+        o == _plansza[1][0] && o == _plansza[1][1] && o == _plansza[1][2] ||
+        o == _plansza[2][0] && o == _plansza[2][1] && o == _plansza[2][2] ||
+        // \ or /
+        o == _plansza[0][0] && o == _plansza[1][1] && o == _plansza[2][2] ||
+        o == _plansza[2][0] && o == _plansza[1][1] && o == _plansza[0][2] ||
+        // |
+        o == _plansza[0][0] && o == _plansza[1][0] && o == _plansza[2][0] ||
+        o == _plansza[0][1] && o == _plansza[1][1] && o == _plansza[2][1] ||
+        o == _plansza[0][2] && o == _plansza[1][2] && o == _plansza[2][2])
+        return true;
+    else
+        return false;
 }
