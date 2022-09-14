@@ -212,6 +212,10 @@ function restartBoard(){
     }
 }
 
+// Here starts code that was wrote 2years ago by me in C#
+// I changed bare minimum just so its works
+// Sooooooo it is hella ugly and unreadable :D
+
 function MiniMax(_plansza, maksymalizuj, dalekosc)
 {
     var plansza = _plansza.map(function(arr) {
