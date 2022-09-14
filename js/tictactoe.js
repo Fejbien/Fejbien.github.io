@@ -66,8 +66,6 @@ function draw(){
 
             if(currentMove == AI){
                 let temp = NajlepszyRuch(board)
-                //console.log("tempX:" + tempX)
-                //console.log("tempY:" + tempY)
                 board[temp[1]][temp[0]] = currentMove;
                 drawBoard();
 
@@ -181,11 +179,7 @@ function mousePressed() {
             AI = temp;
 
             currentMove = charX;
-
-            console.log("Pl" + Player)
-            console.log("AI" + AI)
-            console.log("curr" + currentMove)
-
+            
             restartBoard()
             currentState = States.Game
             break;
