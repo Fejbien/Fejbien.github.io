@@ -31,7 +31,7 @@ async function enterKey(e) {
                 0
             );
 
-            let key = str;
+            let key = str.toLowerCase();
             str = "";
             if (
                 commands.hasOwnProperty(key) === true ||
