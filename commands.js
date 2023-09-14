@@ -4,12 +4,14 @@ var twitter = "https://twitter.com/Fejbien1";
 var instagram = "https://www.instagram.com/fabianiutki/";
 var github = "https://github.com/Fejbien";
 var steam = "https://steamcommunity.com/profiles/76561198201677078";
+var leetcode = "https://leetcode.com/Fejbien/";
 
 urlsDirect = {
     twitter: twitter,
     instagram: instagram,
     github: github,
     steam: steam,
+    leetcode: leetcode,
 };
 
 commands = {
@@ -26,6 +28,7 @@ commands = {
             '<span class="command">instagram</span>      Opens new tab of my instagram profile',
             '<span class="command">github</span>         Opens new tab of my github profile',
             '<span class="command">steam</span>          Opens new tab of my steam profile',
+            '<span class="command">leetcode</span>       Opens new tab of my leetcode profile',
             "<br>",
         ],
     },
