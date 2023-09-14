@@ -62,7 +62,7 @@ commands = {
                 steam +
                 '" target="_blank">steam/Fabian' +
                 "</a>",
-            'Leetcode          <a href="' +
+            'Leetcode       <a href="' +
                 leetcode +
                 '" target="_blank">leetcode/Fejbien' +
                 "</a>",
