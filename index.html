@@ -1,40 +1,23 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projekty</title>
-    <link rel="icon" href="web_icon.svg">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="style.css" />
 
-    <script src="js/resize.js"></script>
-    <script src="libraries/p5.js"></script>
-</head>
-
-<body>
-    <div class="header">
-        <h1>Głowna</h1>
-    </div>
-
-    <div id="siteBody">
-        <div class="navigation">
-            <ul>
-                <li><center><a href="#" style="padding: 0;">Głowna</a></center></li>
-                <li><h3>Strony:</h3></li>
-                <li><a href="minimax.html">MiniMax - opis</a></li>
-                <li><a href="tictactoe.html">MiniMax - uzycie</a></li>
-                <li><a href="astar.html">AStar - opis</a></li>
-                <li><a href="pathfinding.html">AStar - uzycie</a></li>
-            </ul>
+    </head>
+    <body>
+        <div id="terminal">
+            <p id="before"></p>
+        </div>
+        <div id="commandLine">
+            <p id="prefix"></p>
+            <p id="message"></p>
+            <div id="textAnimation"></div>
         </div>
 
-        <div class="article">
-            <script src="js/frontpage.js"></script>
-            <div id="canvasLocation" style="height: 100%; width: 100%; margin: auto;"></div>
-        </div>
-
-    </div>
-</body>
-
+        <script src="commands.js"></script>
+        <script src="js.js"></script>
+    </body>
 </html>
