@@ -83,12 +83,14 @@ function addLine(text, style, time) {
     }, time);
 }
 
-function loopLines(name, style, time) {
-    name.forEach(function (item, index) {
+function loopLines(text, style, time) {
+    text.forEach(function (item, index) {
         addLine(item, style, index * time);
     });
 }
 
 function OpenNewTab(url) {
-    window.open(url, "_blank");
+    setTimeout(function () {
+        window.open(url, "_blank");
+    }, 1000);
 }
