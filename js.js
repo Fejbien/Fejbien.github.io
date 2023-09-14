@@ -23,7 +23,7 @@ async function enterKey(e) {
                 [
                     "<span id='prefix'>" +
                         prefix +
-                        "</span> <span id='message'>" +
+                        "</span><span id='message'>" +
                         str +
                         "</span>",
                 ],
@@ -33,8 +33,25 @@ async function enterKey(e) {
 
             let key = str;
             str = "";
-            if (commands.hasOwnProperty(key) === true) {
-                loopLines(commands[key].text, commands[key].style, 80);
+            if (
+                commands.hasOwnProperty(key) === true ||
+                urlsDirect.hasOwnProperty(key) === true
+            ) {
+                if (urlsDirect.hasOwnProperty(key) === true) {
+                    loopLines(
+                        [
+                            commands["urlDirect"].text[0] +
+                                "<span class='color3'>" +
+                                key +
+                                "...</span>",
+                        ],
+                        commands["urlDirect"].style,
+                        80
+                    );
+                    OpenNewTab(urlsDirect[key]);
+                } else {
+                    loopLines(commands[key].text, commands[key].style, 80);
+                }
             } else {
                 loopLines(commands["error"].text, commands["error"].style, 80);
             }
@@ -70,4 +87,8 @@ function loopLines(name, style, time) {
     name.forEach(function (item, index) {
         addLine(item, style, index * time);
     });
+}
+
+function OpenNewTab(url) {
+    window.open(url, "_blank");
 }

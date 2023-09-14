@@ -36,6 +36,15 @@ p {
     animation: typing 0.5s steps(30, end);
 }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 .inherit,
 a {
     color: #9c8394;
@@ -96,21 +105,16 @@ a:focus {
     margin-left: 20px;
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
 .index {
     color: #dcdccc;
 }
 
 .color2 {
     color: #b89076;
+}
+
+.color3 {
+    color: #08b65f;
 }
 
 .command {
