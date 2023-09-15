@@ -1,6 +1,7 @@
 var prefixElem = document.getElementById("prefix");
 var message = document.getElementById("message");
 var before = document.getElementById("before");
+var terminal = document.getElementById("terminal");
 
 window.addEventListener("keydown", enterKey);
 
@@ -75,6 +76,12 @@ async function enterKey(e) {
 
                     GameInit();
                     isCurrentlyPlaying = true;
+                } else if (key == "clear") {
+                    loopLines(commands[key].text, commands[key].style, 80);
+                    setTimeout(function () {
+                        terminal.innerHTML = '<a id="before"></a>';
+                        before = document.getElementById("before");
+                    }, 500);
                 } else {
                     loopLines(commands[key].text, commands[key].style, 80);
                 }

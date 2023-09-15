@@ -28,6 +28,7 @@ commands = {
             '<span class="command">help</span>           Shows list of available commands',
             '<span class="command">email</span>          It is just my mail',
             '<span class="command">welcome</span>        Displays welcome message',
+            '<span class="command">clear</span>          Clears the terminal',
             '<span class="command">twitter</span>        Opens new tab of my twitter profile',
             '<span class="command">instagram</span>      Opens new tab of my instagram profile',
             '<span class="command">github</span>         Opens new tab of my github profile',
@@ -101,5 +102,10 @@ commands = {
     gameStart: {
         style: "color2",
         text: ["Starts now. The game of "],
+    },
+
+    clear: {
+        style: "color2",
+        text: ["Clearing..."],
     },
 };
