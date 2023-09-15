@@ -4,7 +4,8 @@ var board = [
     [" ", " ", " "],
 ];
 
-var state = 0; // 0 ended 1 ongoing
+var state = 0; // 0 - ended          // 1 - ongoing
+var turn = true; // true - player    // flase - pc
 var playerChar = "X";
 var aiChar = "O";
 
@@ -13,6 +14,8 @@ function tictactoeErrorMessage(text) {
 }
 
 function Input(str) {
+    var symbolChar = turn ? playerChar : aiChar;
+
     if (parseInt(str).toString() === "NaN") {
         if (str == "end") {
             loopLines(["The game has ended"], "color2", 0);
@@ -45,7 +48,70 @@ function Input(str) {
 
     console.log(`y: ${y} x: ${x}`);
     board[y][x] = playerChar;
+
+    if (HasWon(board, playerChar)) {
+        ShowBoard();
+        loopLines(
+            [
+                `${symbolChar} has won!`,
+                "You can try again just by typing `tictactoe` again",
+            ],
+            "margin color2",
+            0
+        );
+        state = 0;
+        return;
+    }
+
+    if (DrawCheck(board)) {
+        ShowBoard();
+        loopLines(
+            [
+                "No winner this game!",
+                "You can try again just by typing `tictactoe` again",
+            ],
+            "margin color2",
+            0
+        );
+        state = 0;
+        return;
+    }
+
+    symbolChar = turn ? playerChar : aiChar;
+    turn = !turn;
+
+    let [slotI, slotJ] = BestMove(board);
+    board[slotI][slotJ] = turn ? playerChar : aiChar;
+
     ShowBoard();
+
+    if (HasWon(board, aiChar)) {
+        loopLines(
+            [
+                `${aiChar} has won!`,
+                "You can try again just by typing `tictactoe` again",
+            ],
+            "margin color2",
+            0
+        );
+        state = 0;
+        return;
+    }
+
+    if (DrawCheck(board)) {
+        loopLines(
+            [
+                "No winner this game!",
+                "You can try again just by typing `tictactoe` again",
+            ],
+            "margin color2",
+            0
+        );
+        state = 0;
+        return;
+    }
+
+    turn = !turn;
 }
 
 function GameInit() {
@@ -90,79 +156,134 @@ function ShowBoard() {
             `&nbsp;&nbsp;&nbsp;Your move ${playerChar}: `,
         ],
         "margin",
-        80
+        0
     );
 }
 
+function MiniMax(_boardMinMax, maximazing, depth) {
+    let boardMinMax = [];
+    for (let i = 0; i < _boardMinMax.length; i++)
+        boardMinMax[i] = _boardMinMax[i].slice();
 
+    if (HasWon(boardMinMax, aiChar)) return 10;
+    else if (HasWon(boardMinMax, playerChar)) return -10;
+    else if (DrawCheck(boardMinMax)) return 0;
 
-// ------------------------------------------------------------------------------------------------------
-
-        function MiniMax(_board, maximazing, depth)
-        {
-            char[] board = (char[])_board.Clone();
-
-            if (HasWon(board, minimaxChar))
-                return 10;
-            else if (HasWon(board, playerChar))
-                return -10;
-            else if (DrawCheck(board))
-                return 0;
-
-            if (maximazing)
-            {
-                let max = int.MinValue;
-                for (int i = 0; i < board.Length; i++)
-                {
-                    if (board[i] == ' ')
-                    {
-                        let returner = MiniMax(MakeMoveAtSlot(board, false, i), false, depth + 1);
-                        max = Math.Max(max, returner - depth);
-                    }
+    if (maximazing) {
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let i = 0; i < boardMinMax.length; i++) {
+            for (let j = 0; j < boardMinMax.length; j++) {
+                if (boardMinMax[i][j] == " ") {
+                    let returner = MiniMax(
+                        MakeMoveAtSlot(boardMinMax, false, i, j),
+                        false,
+                        depth + 1
+                    );
+                    max = Math.max(max, returner - depth);
                 }
-                return max;
-            }
-            else
-            {
-                int min = int.MaxValue;
-                for (int i = 0; i < board.Length; i++)
-                {
-                    if (board[i] == ' ')
-                    {
-                        int returner = MiniMax(MakeMoveAtSlot(board, true, i), true, depth + 1);
-                        min = Math.Min(min, returner);
-                    }
-                }
-                return min;
             }
         }
 
-        static char[] MakeMoveAtSlot(char[] _board, bool whosMoving, int slot)
-        {
-            char[] board = (char[])_board.Clone();
-            board[slot] = whosMoving ? playerChar : minimaxChar;
-            return board;
-        }
-
-        static int BestMove(char[] _board)
-        {
-            int max = int.MinValue;
-            int slot = int.MinValue;
-            char[] board = (char[])_board.Clone();
-            for (int i = 0; i < board.Length; i++)
-                if (board[i] == ' ')
-                {
-                    int returner = MiniMax(MakeMoveAtSlot(board, false, i), false, 0);
-                    if (returner > max)
-                    {
-                        max = returner;
-                        slot = i;
-                    }
+        return max;
+    } else {
+        let min = Number.MAX_SAFE_INTEGER;
+        for (let i = 0; i < boardMinMax.length; i++) {
+            for (let j = 0; j < boardMinMax.length; j++) {
+                if (boardMinMax[i][j] == " ") {
+                    let returner = MiniMax(
+                        MakeMoveAtSlot(boardMinMax, true, i, j),
+                        true,
+                        depth + 1
+                    );
+                    min = Math.min(min, returner);
                 }
-
-            return slot;
+            }
         }
+
+        return min;
     }
 }
 
+function MakeMoveAtSlot(_boardMinMax, whosMoving, slotI, slotJ) {
+    let boardMinMax = [];
+    for (let i = 0; i < _boardMinMax.length; i++)
+        boardMinMax[i] = _boardMinMax[i].slice();
 
+    boardMinMax[slotI][slotJ] = whosMoving ? playerChar : aiChar;
+    return boardMinMax;
+}
+
+function BestMove(_boardMinMax) {
+    let max = Number.MIN_SAFE_INTEGER;
+    let slotI = Number.MIN_SAFE_INTEGER;
+    let slotJ = Number.MIN_SAFE_INTEGER;
+
+    let boardMinMax = [];
+    for (let i = 0; i < _boardMinMax.length; i++)
+        boardMinMax[i] = _boardMinMax[i].slice();
+
+    for (let i = 0; i < boardMinMax.length; i++)
+        for (let j = 0; j < boardMinMax.length; j++) {
+            if (boardMinMax[i][j] == " ") {
+                let returner = MiniMax(
+                    MakeMoveAtSlot(boardMinMax, false, i, j),
+                    false,
+                    0
+                );
+                if (returner > max) {
+                    max = returner;
+                    slotI = i;
+                    slotJ = j;
+                }
+            }
+        }
+
+    return [slotI, slotJ];
+}
+
+function HasWon(boardMinMax, symbol) {
+    var t = symbol;
+    if (
+        // Rows
+        (boardMinMax[0][0] == t &&
+            boardMinMax[0][1] == t &&
+            boardMinMax[0][2] == t) ||
+        (boardMinMax[1][0] == t &&
+            boardMinMax[1][1] == t &&
+            boardMinMax[1][2] == t) ||
+        (boardMinMax[2][0] == t &&
+            boardMinMax[2][1] == t &&
+            boardMinMax[2][2] == t) ||
+        // Collumns
+        (boardMinMax[0][0] == t &&
+            boardMinMax[1][0] == t &&
+            boardMinMax[2][0] == t) ||
+        (boardMinMax[0][1] == t &&
+            boardMinMax[1][1] == t &&
+            boardMinMax[2][1] == t) ||
+        (boardMinMax[0][2] == t &&
+            boardMinMax[1][2] == t &&
+            boardMinMax[2][2] == t) ||
+        // Cross
+        (boardMinMax[0][0] == t &&
+            boardMinMax[1][1] == t &&
+            boardMinMax[2][2] == t) ||
+        (boardMinMax[2][0] == t &&
+            boardMinMax[1][1] == t &&
+            boardMinMax[0][2] == t)
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+function DrawCheck(boardMinMax) {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (boardMinMax[i][j] == " ") return false;
+        }
+    }
+
+    return true;
+}

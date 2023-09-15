@@ -33,7 +33,7 @@ commands = {
             '<span class="command">github</span>         Opens new tab of my github profile',
             '<span class="command">steam</span>          Opens new tab of my steam profile',
             '<span class="command">leetcode</span>       Opens new tab of my leetcode profile',
-            '<span class="command">tictactoe</span>      Starts a game of tic tac toe',
+            '<span class="command">tictactoe</span>      Starts a game of tic tac toe vs computer',
             "<br>",
         ],
     },
@@ -63,7 +63,7 @@ commands = {
                 '" target="_blank">github/Fejbien' +
                 "</a>",
 
-            'Steam          <a href="' +
+            'Steam :D       <a href="' +
                 steam +
                 '" target="_blank">steam/Fabian' +
                 "</a>",
