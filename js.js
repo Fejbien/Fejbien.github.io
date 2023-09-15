@@ -21,7 +21,7 @@ async function enterKey(e) {
     } else {
         if (e.key === "Backspace") str = str.slice(0, -1);
         if (e.key === "Enter") {
-            console.log(str);
+            //console.log(str);
             loopLines(
                 [
                     "<span id='prefix'>" +
