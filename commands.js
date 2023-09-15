@@ -18,6 +18,8 @@ games = {
     tictactoe: "",
 };
 
+// Commands with any upperCase letters wont be able to be called by user
+
 commands = {
     help: {
         style: "color2 margin",
