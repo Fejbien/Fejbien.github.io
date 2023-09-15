@@ -4,6 +4,8 @@ var board = [
     [" ", " ", " "],
 ];
 
+// TODO: choosing who is playing first (currently player (X) starts everytime)
+
 var state = 0; // 0 - ended          // 1 - ongoing
 var turn = true; // true - player    // flase - pc
 var playerChar = "X";
