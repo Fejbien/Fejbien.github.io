@@ -9,6 +9,8 @@ prefixElem.innerHTML = prefix;
 
 var str = "";
 
+var isCurrentlyPlaying = false;
+
 // Welcome message
 loopLines(commands["welcome"].text, commands["welcome"].style, 80);
 
@@ -33,9 +35,19 @@ async function enterKey(e) {
 
             let key = str.toLowerCase();
             str = "";
+
+            if (isCurrentlyPlaying) {
+                Input(key);
+
+                if (state == 0) isCurrentlyPlaying = false;
+                message.innerHTML = str;
+                return;
+            }
+
             if (
                 commands.hasOwnProperty(key) === true ||
-                urlsDirect.hasOwnProperty(key) === true
+                urlsDirect.hasOwnProperty(key) === true ||
+                games.hasOwnProperty(key) === true
             ) {
                 if (urlsDirect.hasOwnProperty(key) === true) {
                     loopLines(
@@ -49,6 +61,20 @@ async function enterKey(e) {
                         80
                     );
                     OpenNewTab(urlsDirect[key]);
+                } else if (games.hasOwnProperty(key) === true) {
+                    loopLines(
+                        [
+                            commands["gameStart"].text[0] +
+                                "<span class='color3'>" +
+                                key +
+                                "...</span>",
+                        ],
+                        commands["gameStart"].style,
+                        80
+                    );
+
+                    GameInit();
+                    isCurrentlyPlaying = true;
                 } else {
                     loopLines(commands[key].text, commands[key].style, 80);
                 }

@@ -14,6 +14,10 @@ urlsDirect = {
     leetcode: leetcode,
 };
 
+games = {
+    tictactoe: "",
+};
+
 commands = {
     help: {
         style: "color2 margin",
@@ -29,6 +33,7 @@ commands = {
             '<span class="command">github</span>         Opens new tab of my github profile',
             '<span class="command">steam</span>          Opens new tab of my steam profile',
             '<span class="command">leetcode</span>       Opens new tab of my leetcode profile',
+            '<span class="command">tictactoe</span>      Starts a game of tic tac toe',
             "<br>",
         ],
     },
@@ -91,5 +96,10 @@ commands = {
     urlDirect: {
         style: "color2",
         text: ["Opening new tab of "],
+    },
+
+    gameStart: {
+        style: "color2",
+        text: ["Starts now. The game of "],
     },
 };

@@ -20,6 +20,17 @@ textarea {
     position: absolute;
 }
 
+pre {
+    display: block;
+    line-height: 1.3em;
+    margin: 0;
+    overflow: hidden;
+    white-space: pre;
+    margin: 0;
+    letter-spacing: 0.05em;
+    animation: typing 0.5s steps(30, end);
+}
+
 b {
     font-weight: bold;
     text-decoration: underline;
