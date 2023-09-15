@@ -12,7 +12,7 @@ var playerChar = "X";
 var aiChar = "O";
 
 function tictactoeErrorMessage(text) {
-    loopLines(text, "error", 0);
+    loopLines(['<span class="inherit">' + text + "</span"], "error", 0);
 }
 
 function Input(str) {

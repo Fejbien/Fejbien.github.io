@@ -25,7 +25,7 @@ commands = {
         style: "color2 margin",
         text: [
             "<br>",
-            '<span class="command">creator</span>        Who i am',
+            '<span class="command">aboutme</span>        About me',
             '<span class="command">socials</span>        Social links',
             '<span class="command">help</span>           Shows list of available commands',
             '<span class="command">email</span>          It is just my mail',
@@ -40,12 +40,13 @@ commands = {
             "<br>",
         ],
     },
-    creator: {
+    aboutme: {
         style: "color2 margin",
         text: [
             "<br>",
             "Hey, I'm Fabian!",
             "Currently I'm a student at PUT ",
+            "Lovin C#, using JS at the moment :c",
             "<br>",
         ],
     },
