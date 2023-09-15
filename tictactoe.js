@@ -94,21 +94,75 @@ function ShowBoard() {
     );
 }
 
-function checkWin() {
-    o = currentMove;
-    if (
-        // --
-        (o == board[0][0] && o == board[0][1] && o == board[0][2]) ||
-        (o == board[1][0] && o == board[1][1] && o == board[1][2]) ||
-        (o == board[2][0] && o == board[2][1] && o == board[2][2]) ||
-        // \ or /
-        (o == board[0][0] && o == board[1][1] && o == board[2][2]) ||
-        (o == board[2][0] && o == board[1][1] && o == board[0][2]) ||
-        // |
-        (o == board[0][0] && o == board[1][0] && o == board[2][0]) ||
-        (o == board[0][1] && o == board[1][1] && o == board[2][1]) ||
-        (o == board[0][2] && o == board[1][2] && o == board[2][2])
-    )
-        return true;
-    else return false;
+
+
+// ------------------------------------------------------------------------------------------------------
+
+        function MiniMax(_board, maximazing, depth)
+        {
+            char[] board = (char[])_board.Clone();
+
+            if (HasWon(board, minimaxChar))
+                return 10;
+            else if (HasWon(board, playerChar))
+                return -10;
+            else if (DrawCheck(board))
+                return 0;
+
+            if (maximazing)
+            {
+                let max = int.MinValue;
+                for (int i = 0; i < board.Length; i++)
+                {
+                    if (board[i] == ' ')
+                    {
+                        let returner = MiniMax(MakeMoveAtSlot(board, false, i), false, depth + 1);
+                        max = Math.Max(max, returner - depth);
+                    }
+                }
+                return max;
+            }
+            else
+            {
+                int min = int.MaxValue;
+                for (int i = 0; i < board.Length; i++)
+                {
+                    if (board[i] == ' ')
+                    {
+                        int returner = MiniMax(MakeMoveAtSlot(board, true, i), true, depth + 1);
+                        min = Math.Min(min, returner);
+                    }
+                }
+                return min;
+            }
+        }
+
+        static char[] MakeMoveAtSlot(char[] _board, bool whosMoving, int slot)
+        {
+            char[] board = (char[])_board.Clone();
+            board[slot] = whosMoving ? playerChar : minimaxChar;
+            return board;
+        }
+
+        static int BestMove(char[] _board)
+        {
+            int max = int.MinValue;
+            int slot = int.MinValue;
+            char[] board = (char[])_board.Clone();
+            for (int i = 0; i < board.Length; i++)
+                if (board[i] == ' ')
+                {
+                    int returner = MiniMax(MakeMoveAtSlot(board, false, i), false, 0);
+                    if (returner > max)
+                    {
+                        max = returner;
+                        slot = i;
+                    }
+                }
+
+            return slot;
+        }
+    }
 }
+
+
