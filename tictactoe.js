@@ -4,7 +4,9 @@ var board = [
     [" ", " ", " "],
 ];
 
-// TODO: choosing who is playing first (currently player (X) starts everytime)
+// TODO:
+//      - choosing who is playing first (currently player (X) starts everytime)
+//      - adding "TTT" to every public access variable or function instead of namespacing it (it would take longer sadly its not c++ :c)
 
 var state = 0; // 0 - ended          // 1 - ongoing
 var turn = true; // true - player    // flase - pc
