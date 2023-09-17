@@ -66,9 +66,9 @@ async function enterKey(e) {
             commandHistory[commandHistory.length - 1] = str;
             commandHistory.push("");
             currentIndexHistory = commandHistory.length - 1;
-            console.log(currentIndexHistory);
             str = "";
 
+            // Game is on
             if (isCurrentlyPlaying) {
                 Input(key);
 
@@ -77,51 +77,13 @@ async function enterKey(e) {
                 return;
             }
 
+            // Variety commands read
             if (
                 commands.hasOwnProperty(key) === true ||
                 urlsDirect.hasOwnProperty(key) === true ||
                 games.hasOwnProperty(key) === true
             ) {
-                // Commands with url direct
-                if (urlsDirect.hasOwnProperty(key) === true) {
-                    loopLines(
-                        [
-                            commands["urlDirect"].text[0] +
-                                "<span class='color3'>" +
-                                key +
-                                "...</span>",
-                        ],
-                        commands["urlDirect"].style,
-                        80
-                    );
-                    OpenNewTab(urlsDirect[key]);
-                }
-                // Commands that start games
-                else if (games.hasOwnProperty(key) === true) {
-                    loopLines(
-                        [
-                            commands["gameStart"].text[0] +
-                                "<span class='color3'>" +
-                                key +
-                                "...</span>",
-                        ],
-                        commands["gameStart"].style,
-                        80
-                    );
-
-                    GameInit();
-                    isCurrentlyPlaying = true;
-                }
-                // Custom additional action beside command
-                else if (key == "clear") {
-                    loopLines(commands[key].text, commands[key].style, 80);
-                    setTimeout(function () {
-                        terminal.innerHTML = '<a id="before"></a>';
-                        before = document.getElementById("before");
-                    }, 500);
-                } else {
-                    loopLines(commands[key].text, commands[key].style, 80);
-                }
+                HandleAvaiableCommands(key);
             } else {
                 loopLines(commands["error"].text, commands["error"].style, 80);
             }
@@ -129,6 +91,59 @@ async function enterKey(e) {
     }
 
     message.innerHTML = str;
+}
+
+function HandleAvaiableCommands(key) {
+    // Commands with url direct
+    if (urlsDirect.hasOwnProperty(key) === true) {
+        loopLines(
+            [
+                commands["urlDirect"].text[0] +
+                    "<span class='color3'>" +
+                    key +
+                    "...</span>",
+            ],
+            commands["urlDirect"].style,
+            80
+        );
+        OpenNewTab(urlsDirect[key]);
+
+        return;
+    }
+
+    // Commands that start games
+    if (games.hasOwnProperty(key) === true) {
+        loopLines(
+            [
+                commands["gameStart"].text[0] +
+                    "<span class='color3'>" +
+                    key +
+                    "...</span>",
+            ],
+            commands["gameStart"].style,
+            80
+        );
+
+        GameInit();
+        isCurrentlyPlaying = true;
+
+        return;
+    }
+
+    // Commands with additional action
+    switch (key) {
+        case "clear":
+            loopLines(commands[key].text, commands[key].style, 80);
+            setTimeout(function () {
+                terminal.innerHTML = '<a id="before"></a>';
+                before = document.getElementById("before");
+            }, 500);
+            break;
+
+        default:
+            loopLines(commands[key].text, commands[key].style, 80);
+            break;
+    }
 }
 
 function addLine(text, style, time) {
