@@ -27,7 +27,7 @@ commands = {
         style: "color2 margin",
         text: [
             "<br>",
-            '<span class="command">aboutme</span>        About me',
+            '<span class="command">about me</span>       About me',
             '<span class="command">socials</span>        Social links',
             '<span class="command">help</span>           Shows list of available commands',
             '<span class="command">email</span>          It is just my mail',
@@ -39,8 +39,9 @@ commands = {
             '<span class="command">steam</span>          Opens new tab of my steam profile',
             '<span class="command">leetcode</span>       Opens new tab of my leetcode profile',
             '<span class="command">tictactoe</span>      Starts a game of tic tac toe vs computer',
-            '<span class="command">imgtoascii</span>     Opens subsite with an img to ascii converter',
+            '<span class="command">img to ascii</span>   Opens subsite with an img to ascii converter (Under construction)',
             "<br>",
+            "Not case sensetive, Not space sensetive :D",
         ],
     },
     aboutme: {

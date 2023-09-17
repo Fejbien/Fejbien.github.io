@@ -3,6 +3,9 @@ var message = document.getElementById("message");
 var before = document.getElementById("before");
 var terminal = document.getElementById("terminal");
 
+var commandHistory = [""];
+var currentIndexHistory = 0;
+
 window.addEventListener("keydown", enterKey);
 
 var prefix = "fabian@website $";
@@ -16,6 +19,31 @@ var isCurrentlyPlaying = false;
 loopLines(commands["welcome"].text, commands["welcome"].style, 80);
 
 async function enterKey(e) {
+    // Makes site unscrollable by arrow keys and space bar
+    if (
+        ["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
+            e.code
+        ) > -1
+    ) {
+        e.preventDefault();
+    }
+
+    // Arrow Up Commands History
+    if (e.keyCode == 38) {
+        if (currentIndexHistory < 1) return;
+
+        currentIndexHistory--;
+        str = commandHistory[currentIndexHistory];
+    }
+
+    // Arrow Down Commands History
+    if (e.keyCode == 40) {
+        if (currentIndexHistory > commandHistory.length - 2) return;
+
+        currentIndexHistory++;
+        str = commandHistory[currentIndexHistory];
+    }
+
     if (e.key.length < 2) {
         str += e.key;
     } else {
@@ -34,7 +62,11 @@ async function enterKey(e) {
                 0
             );
 
-            let key = str.toLowerCase();
+            let key = str.toLowerCase().replace(/\s/g, "");
+            commandHistory[commandHistory.length - 1] = str;
+            commandHistory.push("");
+            currentIndexHistory = commandHistory.length - 1;
+            console.log(currentIndexHistory);
             str = "";
 
             if (isCurrentlyPlaying) {
