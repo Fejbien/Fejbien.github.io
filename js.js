@@ -15,8 +15,12 @@ var str = "";
 
 var isCurrentlyPlaying = false;
 
-// Welcome message
+// Welcome messages
 loopLines(commands["welcome"].text, commands["welcome"].style, 80);
+console.log(
+    "%cSecret? Secrets?",
+    "color: red; font-size: 32px; font-weight: bolder;"
+);
 
 async function enterKey(e) {
     // Makes site unscrollable by arrow keys and space bar

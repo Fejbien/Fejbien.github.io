@@ -115,4 +115,39 @@ commands = {
         style: "color2",
         text: ["Clearing..."],
     },
+
+    // "Secret commands"
+    fuckyou: {
+        style: "error margin",
+        text: ["<span class='inherit'>Do not swear at me :c</span>"],
+    },
+
+    fuck: {
+        style: "error margin",
+        text: ["<span class='inherit'>Do not swear!</span>"],
+    },
+
+    isthereasecret: {
+        style: "margin color2",
+        text: ["WoW you asked! Sadly there is no secret here :c"],
+    },
+
+    arethereanysecrets: {
+        style: "margin color2",
+        text: ["WoW you asked! Sadly there are no secrets here :c"],
+    },
+
+    secret: {
+        style: "margin color2",
+        text: [
+            "Maybe ask first? <span class='command'>is there a secret</span>",
+        ],
+    },
+
+    secrets: {
+        style: "margin color2",
+        text: [
+            "Maybe ask first? <span class='command'>are there any secrets</span>",
+        ],
+    },
 };
