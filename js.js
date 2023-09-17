@@ -8,10 +8,9 @@ var currentIndexHistory = 0;
 
 window.addEventListener("keydown", enterKey);
 
+var str = "";
 var prefix = "fabian@website $";
 prefixElem.innerHTML = prefix;
-
-var str = "";
 
 var isCurrentlyPlaying = false;
 
@@ -54,18 +53,9 @@ async function enterKey(e) {
         if (e.key === "Backspace") str = str.slice(0, -1);
         if (e.key === "Enter") {
             //console.log(str);
-            loopLines(
-                [
-                    "<span id='prefix'>" +
-                        prefix +
-                        "</span><span id='message'>" +
-                        str +
-                        "</span>",
-                ],
-                "no-animation",
-                0
-            );
+            EnteredMessage();
 
+            // Handle cAsEsEnS, s p a c e s and history indexing
             let key = str.toLowerCase().replace(/\s/g, "");
             commandHistory[commandHistory.length - 1] = str;
             commandHistory.push("");
@@ -87,8 +77,10 @@ async function enterKey(e) {
                 urlsDirect.hasOwnProperty(key) === true ||
                 games.hasOwnProperty(key) === true
             ) {
+                // Working command
                 HandleAvaiableCommands(key);
             } else {
+                // Error command (no corresponding command found)
                 loopLines(commands["error"].text, commands["error"].style, 80);
             }
         }
@@ -97,6 +89,22 @@ async function enterKey(e) {
     message.innerHTML = str;
 }
 
+// Message entered by user on top of action of that command
+function EnteredMessage() {
+    loopLines(
+        [
+            "<span id='prefix'>" +
+                prefix +
+                "</span><span id='message'>" +
+                str +
+                "</span>",
+        ],
+        "no-animation",
+        0
+    );
+}
+
+// Handles all avaiable commands from 'commands.js' file
 function HandleAvaiableCommands(key) {
     // Commands with url direct
     if (urlsDirect.hasOwnProperty(key) === true) {
@@ -150,6 +158,7 @@ function HandleAvaiableCommands(key) {
     }
 }
 
+// Writes single line
 function addLine(text, style, time) {
     var t = "";
     for (let i = 0; i < text.length; i++) {
@@ -172,12 +181,14 @@ function addLine(text, style, time) {
     }, time);
 }
 
+// Writes multiple lines only accepts string array as 'text' field
 function loopLines(text, style, time) {
     text.forEach(function (item, index) {
         addLine(item, style, index * time);
     });
 }
 
+// Opens a tab from given url (all urls are located in commands file)
 function OpenNewTab(url) {
     setTimeout(function () {
         window.open(url, "_blank");
