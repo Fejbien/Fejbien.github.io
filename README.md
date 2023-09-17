@@ -1,3 +1,1 @@
-# Fejbien.github.io
-
-## Terminal like site
+# Terminal like site
