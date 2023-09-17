@@ -28,7 +28,7 @@ function Input(str) {
             ShowBoard();
         } else {
             tictactoeErrorMessage([
-                "Please type only numbers from 1 to 9 or 'END' to end the game or 'REDRAW' to redraw the board!",
+                "Please type only numbers from 1 to 9 or <span class='command'>END</span> to end the game or <span class='command'>REDRAW</span> to redraw the board!",
             ]);
         }
 
@@ -58,7 +58,7 @@ function Input(str) {
         loopLines(
             [
                 `${symbolChar} has won!`,
-                "You can try again just by typing `tictactoe` again",
+                "You can try again just by typing <span class='command'>tictactoe</span> again",
             ],
             "margin color2",
             0
@@ -72,7 +72,7 @@ function Input(str) {
         loopLines(
             [
                 "No winner this game!",
-                "You can try again just by typing `tictactoe` again",
+                "You can try again just by typing <span class='command'>tictactoe</span> again",
             ],
             "margin color2",
             0
@@ -93,7 +93,7 @@ function Input(str) {
         loopLines(
             [
                 `${aiChar} has won!`,
-                "You can try again just by typing `tictactoe` again",
+                "You can try again just by typing <span class='command'>tictactoe</span> again",
             ],
             "margin color2",
             0
@@ -106,7 +106,7 @@ function Input(str) {
         loopLines(
             [
                 "No winner this game!",
-                "You can try again just by typing `tictactoe` again",
+                "You can try again just by typing <span class='command'>tictactoe</span> again",
             ],
             "margin color2",
             0
@@ -130,7 +130,7 @@ function GameInit() {
         [
             "<br>",
             "Place your charcter by typing the number corresponding to your place of choice.",
-            "You can also end the game by typing 'END' or redraw the board by 'REDRAW'.",
+            "You can also end the game by typing <span class='command'>END</span> or redraw the board by <span class='command'>REDRAW</span>.",
             "Do not worry it is not case sensetive :D",
             "<br>",
         ],

@@ -7,6 +7,9 @@ var steam = "https://steamcommunity.com/profiles/76561198201677078";
 var leetcode = "https://leetcode.com/Fejbien/";
 var imgtoascii = "./subSites/imgToAscii.html";
 
+var thisProject = "https://github.com/Fejbien/Fejbien.github.io";
+
+// All commands that are opening a new tab
 urlsDirect = {
     twitter: twitter,
     instagram: instagram,
@@ -14,6 +17,7 @@ urlsDirect = {
     steam: steam,
     leetcode: leetcode,
     imgtoascii: imgtoascii,
+    this: thisProject,
 };
 
 games = {
@@ -21,7 +25,6 @@ games = {
 };
 
 // Commands with any upperCase letters wont be able to be called by user
-
 commands = {
     help: {
         style: "color2 margin",
@@ -39,6 +42,7 @@ commands = {
             "<span class='command'>github</span>         Opens new tab of my github profile",
             "<span class='command'>steam</span>          Opens new tab of my steam profile",
             "<span class='command'>leetcode</span>       Opens new tab of my leetcode profile",
+            "<span class='command'>this</span>           Opens new tab of this site's project on Github",
             "<span class='command'>tictactoe</span>      Starts a game of tic tac toe vs computer",
             "<span class='command'>img to ascii</span>   Opens subsite with an img to ascii converter (Under construction)",
             "<br>",
