@@ -43,7 +43,7 @@ commands = {
             "<span class='command'>steam</span>          Opens new tab of my steam profile",
             "<span class='command'>leetcode</span>       Opens new tab of my leetcode profile",
             "<span class='command'>this</span>           Opens new tab of this site's project on Github",
-            "<span class='command'>tictactoe</span>      Starts a game of tic tac toe vs computer",
+            "<span class='command'>tic tac toe</span>    Starts a game of tic tac toe vs computer",
             "<span class='command'>img to ascii</span>   Opens subsite with an img to ascii converter (Under construction)",
             "<br>",
             "Not case sensetive, Not space sensetive :D",
