@@ -5,6 +5,7 @@ var instagram = "https://www.instagram.com/fabianiutki/";
 var github = "https://github.com/Fejbien";
 var steam = "https://steamcommunity.com/profiles/76561198201677078";
 var leetcode = "https://leetcode.com/Fejbien/";
+var imgtoascii = "./subSites/imgToAscii.html";
 
 urlsDirect = {
     twitter: twitter,
@@ -12,6 +13,7 @@ urlsDirect = {
     github: github,
     steam: steam,
     leetcode: leetcode,
+    imgtoascii: imgtoascii,
 };
 
 games = {
@@ -37,6 +39,7 @@ commands = {
             '<span class="command">steam</span>          Opens new tab of my steam profile',
             '<span class="command">leetcode</span>       Opens new tab of my leetcode profile',
             '<span class="command">tictactoe</span>      Starts a game of tic tac toe vs computer',
+            '<span class="command">imgtoascii</span>     Opens subsite with an img to ascii converter',
             "<br>",
         ],
     },

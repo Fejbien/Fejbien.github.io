@@ -50,6 +50,7 @@ async function enterKey(e) {
                 urlsDirect.hasOwnProperty(key) === true ||
                 games.hasOwnProperty(key) === true
             ) {
+                // Commands with url direct
                 if (urlsDirect.hasOwnProperty(key) === true) {
                     loopLines(
                         [
@@ -62,7 +63,9 @@ async function enterKey(e) {
                         80
                     );
                     OpenNewTab(urlsDirect[key]);
-                } else if (games.hasOwnProperty(key) === true) {
+                }
+                // Commands that start games
+                else if (games.hasOwnProperty(key) === true) {
                     loopLines(
                         [
                             commands["gameStart"].text[0] +
@@ -76,7 +79,9 @@ async function enterKey(e) {
 
                     GameInit();
                     isCurrentlyPlaying = true;
-                } else if (key == "clear") {
+                }
+                // Custom additional action beside command
+                else if (key == "clear") {
                     loopLines(commands[key].text, commands[key].style, 80);
                     setTimeout(function () {
                         terminal.innerHTML = '<a id="before"></a>';
