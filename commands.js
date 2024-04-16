@@ -1,21 +1,21 @@
 var email = "mailto:fabian.sucholas123@gmail.com";
 
+var linkedin = "https://www.linkedin.com/in/fabian-sucholas-8547b7262/";
 var twitter = "https://twitter.com/Fejbien1";
 var instagram = "https://www.instagram.com/fabianiutki/";
 var github = "https://github.com/Fejbien";
 var steam = "https://steamcommunity.com/profiles/76561198201677078";
-var leetcode = "https://leetcode.com/Fejbien/";
 var imgtoascii = "./subSites/imgToAscii.html";
 
 var thisProject = "https://github.com/Fejbien/Fejbien.github.io";
 
 // All commands that are opening a new tab
 urlsDirect = {
+    linkedin: linkedin,
     twitter: twitter,
     instagram: instagram,
     github: github,
     steam: steam,
-    leetcode: leetcode,
     imgtoascii: imgtoascii,
     this: thisProject,
 };
@@ -37,16 +37,16 @@ commands = {
             "<span class='command'>welcome</span>        Shows welcome message",
             "<span class='command'>clear</span>          Clears the terminal",
             "<span class='command'>error</span>          Shows error message",
+            "<span class='command'>linkedin</span>       Opens new tab of my linkedin profile",
             "<span class='command'>twitter</span>        Opens new tab of my twitter profile",
             "<span class='command'>instagram</span>      Opens new tab of my instagram profile",
             "<span class='command'>github</span>         Opens new tab of my github profile",
             "<span class='command'>steam</span>          Opens new tab of my steam profile",
-            "<span class='command'>leetcode</span>       Opens new tab of my leetcode profile",
             "<span class='command'>this</span>           Opens new tab of this site's project on Github",
             "<span class='command'>tic tac toe</span>    Starts a game of tic tac toe vs computer",
             "<span class='command'>img to ascii</span>   Opens subsite with an img to ascii converter (Under construction)",
             "<br>",
-            "Not case sensetive, Not space sensetive :D",
+            "Not case sensetive nor space sensetive :D",
         ],
     },
     aboutme: {
@@ -55,7 +55,7 @@ commands = {
             "<br>",
             "Hey, I'm Fabian!",
             "Currently I'm a student at PUT ",
-            "Lovin C#, using JS at the moment :c",
+            "Love programming, learning new things and the last but not least, watching low budget movies :D",
             "<br>",
         ],
     },
@@ -63,6 +63,10 @@ commands = {
         style: "color2 margin",
         text: [
             "<br>",
+            'linkedin       <a href="' +
+                linkedin +
+                '" target="_blank">linkedin/FabianSucholas' +
+                "</a>",
             'twitter        <a href="' +
                 twitter +
                 '" target="_blank">twitter/Fejbien1' +
@@ -79,10 +83,6 @@ commands = {
             'Steam :D       <a href="' +
                 steam +
                 '" target="_blank">steam/Fabian' +
-                "</a>",
-            'Leetcode       <a href="' +
-                leetcode +
-                '" target="_blank">leetcode/Fejbien' +
                 "</a>",
             "<br>",
         ],
