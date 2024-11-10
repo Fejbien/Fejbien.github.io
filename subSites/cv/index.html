@@ -159,6 +159,8 @@
         </div>
     </body>
     <script>
+        document.getElementById("body").style.zoom = "25%";
+
         let links = {
             linkedin: "https://www.linkedin.com/in/fabian-sucholas-8547b7262/",
             website: "https://fejbien.github.io/",
@@ -297,11 +299,12 @@
         document.getElementById("printButton").addEventListener("click", () => {
             document.getElementById("languageButton").style.display = "none";
             document.getElementById("printButton").style.display = "none";
-
+            document.getElementById("body").style.zoom = "100%";
             window.print();
 
             document.getElementById("languageButton").style.display = "block";
             document.getElementById("printButton").style.display = "block";
+            document.getElementById("body").style.zoom = "25%";
         });
 
         const urlParams = new URLSearchParams(window.location.search);
