@@ -6,6 +6,7 @@ var instagram = "https://www.instagram.com/fabianiutki/";
 var github = "https://github.com/Fejbien";
 var steam = "https://steamcommunity.com/profiles/76561198201677078";
 var imgtoascii = "./subSites/imgToAscii.html";
+var cv = "./subSites/cv/index.html";
 
 var thisProject = "https://github.com/Fejbien/Fejbien.github.io";
 
@@ -17,6 +18,7 @@ urlsDirect = {
     github: github,
     steam: steam,
     imgtoascii: imgtoascii,
+    cv: cv,
     this: thisProject,
 };
 
@@ -24,7 +26,6 @@ games = {
     tictactoe: "",
 };
 
-// Commands with any upperCase letters wont be able to be called by user
 commands = {
     help: {
         style: "color2 margin",
@@ -44,6 +45,7 @@ commands = {
             "<span class='command'>steam</span>          Opens new tab of my steam profile",
             "<span class='command'>this</span>           Opens new tab of this site's project on Github",
             "<span class='command'>tic tac toe</span>    Starts a game of tic tac toe vs computer",
+            "<span class='command'>CV</span>             Opens subsite of my CV",
             "<span class='command'>img to ascii</span>   Opens subsite with an img to ascii converter (Under construction)",
             "<br>",
             "Not case sensetive nor space sensetive :D",

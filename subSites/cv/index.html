@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CV</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            firstBlack: "#343434",
+                            secondBlack: "#363d49",
+                            break: "#a6a6a6",
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body
+        class="bg-blue-700 flex flex-col justify-center items-center overflow-auto"
+        id="body"
+    >
+        <div id="CV" class="bg-white w-[2480px] h-[3508px]">
+            <div id="header" class="bg-firstBlack">
+                <span
+                    id="name"
+                    class="text-[16rem] text-white font-bold pl-[36px]"
+                    style="line-height: 1"
+                >
+                    ...
+                </span>
+                <div class="flex flex-col mt-4 pb-12">
+                    <div class="flex flex-row justify-between">
+                        <div class="w-[60%] flex flex-row">
+                            <img
+                                src="./mail.svg"
+                                alt="email"
+                                class="w-20 ml-14 mr-10 pt-1"
+                            />
+                            <div class="flex flex-col justify-center">
+                                <a
+                                    id="mailLink"
+                                    href=""
+                                    class="text-white text-[84px] ml-[12px]"
+                                    style="line-height: 1"
+                                    target="_blank"
+                                >
+                                    ...
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-auto flex flex-row">
+                            <a
+                                id="linkedinLink"
+                                href=""
+                                class="text-white text-[84px] ml-[12px] underline"
+                                style="line-height: 1"
+                                target="_blank"
+                            >
+                                ...
+                            </a>
+                            <img
+                                src="./linkedin.svg"
+                                alt="email"
+                                class="w-16 mr-14 ml-10 pt-3"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between mt-8">
+                        <div class="w-[60%] flex flex-row">
+                            <img
+                                src="./phone.svg"
+                                alt="phone"
+                                class="w-20 ml-14 mr-10 pt-1"
+                            />
+                            <div class="flex flex-col justify-center">
+                                <a
+                                    id="phoneLink"
+                                    href=""
+                                    class="text-white text-[84px] ml-[12px]"
+                                    style="line-height: 1"
+                                    target="_blank"
+                                >
+                                    ...
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-auto flex flex-row">
+                            <a
+                                id="websiteLink"
+                                href=""
+                                class="text-white text-[84px] ml-[12px] underline"
+                                style="line-height: 1"
+                                target="_blank"
+                            >
+                                ...
+                            </a>
+                            <img
+                                src="./web.svg"
+                                alt="website"
+                                class="w-16 mr-14 ml-10 pt-4"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="px-20">
+                <div id="educationSection" class="mt-10">
+                    <span
+                        id="education"
+                        class="text-9xl text-firstBlack font-bold"
+                        >...</span
+                    >
+                    <div
+                        class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
+                    ></div>
+                </div>
+                <div id="skillsSection" class="mt-10">
+                    <span id="skills" class="text-9xl text-firstBlack font-bold"
+                        >...</span
+                    >
+                    <div
+                        class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
+                    ></div>
+                    <div class="flex flex-row ml-12">
+                        <ul id="skillsList" class="list-disc ml-[108px]"></ul>
+                    </div>
+                </div>
+                <div id="languagesSection" class="mt-10">
+                    <span
+                        id="languages"
+                        class="text-9xl text-firstBlack font-bold"
+                        >...</span
+                    >
+                    <div
+                        class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
+                    ></div>
+                    <div class="flex flex-row ml-12">
+                        <ul
+                            id="languagesList"
+                            class="list-disc ml-[108px]"
+                        ></ul>
+                    </div>
+                </div>
+                <div id="experienceSection" class="mt-10">
+                    <span
+                        id="experience"
+                        class="text-9xl text-firstBlack font-bold"
+                        >...
+                    </span>
+                    <div
+                        class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let links = {
+            linkedin: "https://www.linkedin.com/in/fabian-sucholas-8547b7262/",
+            website: "https://fejbien.github.io/",
+            circle: "https://net.cs.put.poznan.pl",
+            number: "tel:+48511221437",
+            email: "mailto:fabian.sucholas123@gmail.com",
+        };
+
+        let dataPL = {
+            // Header section
+            name: "Fabian Sucholas",
+            email: "fabian.sucholas123@gmail.com",
+            phone: "+48 511 221 437",
+            linkedin: "LinkedIn",
+            website: "Strona internetowa",
+            // Education section
+            education: "Wykształcenie",
+            educationList: [
+                {
+                    degree: "Teleinformatyka, Inżnier",
+                    name: "Politechnika Poznańska",
+                    date: "2023 - obecnie",
+                },
+                {
+                    degree: "Technikum Informatyczne",
+                    name: "ZSP, Witkowo",
+                    date: "2019 - 2023",
+                },
+            ],
+            // Skills section
+            skills: "Umiejętności",
+            skillsArray: [
+                "JavaScript",
+                "SQL",
+                "React.js",
+                "Tailwind.css",
+                "Git",
+                "Astro",
+                "C#",
+                "PHP",
+            ],
+            // Languages section
+            languages: "Języki",
+            languagesArray: [
+                "Język Polski - Ojczysty",
+                "Język Angielski - Zaawansowany",
+            ],
+            // Experience section
+            experience: "Doświadczenie",
+            experienceArray: [
+                {
+                    position: "Członek koła naukowego, Tworca stron",
+                    company: "Koło naukowe PUT.NET",
+                    date: "2023 - obecnie",
+                    linkName: "PUT.NET",
+                    link: links.circle,
+                },
+            ],
+        };
+
+        let dataEN = {
+            // Header section
+            name: "Fabian Sucholas",
+            email: "fabian.sucholas123@gmail.com",
+            phone: "+48 511 221 437",
+            linkedin: "LinkedIn",
+            website: "Personal website",
+            // Education section
+            education: "Education",
+            educationList: [
+                {
+                    degree: "Teleinformatics, Engineer",
+                    name: "Poznan University of Technology",
+                    date: "2023 - present",
+                },
+                {
+                    degree: "IT Technician",
+                    name: "ZSP, Witkowo",
+                    date: "2019 - 2023",
+                },
+            ],
+            // Skills section
+            skills: "Skills",
+            skillsArray: [
+                "JavaScript",
+                "SQL",
+                "React.js",
+                "Tailwind.css",
+                "Git",
+                "Astro",
+                "C#",
+                "PHP",
+            ],
+            // Languages section
+            languages: "Languages",
+            languagesArray: ["Polish - Native", "English - Advanced"],
+            // Experience section
+            experience: "Experience",
+            experienceArray: [
+                {
+                    position:
+                        "Member of the scientific circle, Website creator",
+                    company: "PUT.NET",
+                    date: "2023 - present",
+                    linkName: "PUT.NET",
+                    link: links.circle,
+                },
+            ],
+        };
+
+        let languageButton = document.createElement("button");
+        languageButton.id = "languageButton";
+        languageButton.className =
+            "absolute top-0 left-0 m-4 bg-white text-black p-16 text-9xl rounded-lg";
+        languageButton.innerText = "PL/EN";
+        document.getElementById("body").appendChild(languageButton);
+
+        document
+            .getElementById("languageButton")
+            .addEventListener("click", () => {
+                const currentUrl = new URL(window.location.href);
+                const currentLanguage = currentUrl.searchParams.get("language");
+                const newLanguage =
+                    currentLanguage === "true" ? "false" : "true";
+                currentUrl.searchParams.set("language", newLanguage);
+                window.location.href = currentUrl.toString();
+            });
+
+        let printButton = document.createElement("button");
+        printButton.id = "printButton";
+        printButton.className =
+            "absolute top-0 right-0 m-4 bg-white text-black p-16 text-9xl rounded-lg";
+        printButton.innerText = "Print";
+        document.getElementById("body").appendChild(printButton);
+
+        document.getElementById("printButton").addEventListener("click", () => {
+            document.getElementById("languageButton").style.display = "none";
+            document.getElementById("printButton").style.display = "none";
+
+            window.print();
+
+            document.getElementById("languageButton").style.display = "block";
+            document.getElementById("printButton").style.display = "block";
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const languageParam = urlParams.get("language");
+        // True - PL, False - EN
+        let languageSelection = languageParam === "true";
+
+        let data;
+        if (languageSelection) data = dataPL;
+        else data = dataEN;
+
+        // Header section
+        document.getElementById("name").innerText = data.name;
+
+        document.getElementById("mailLink").href = links.email;
+        document.getElementById("mailLink").innerText = data.email;
+
+        document.getElementById("linkedinLink").href = links.linkedin;
+        document.getElementById("linkedinLink").innerText = data.linkedin;
+
+        document.getElementById("phoneLink").href = links.number;
+        document.getElementById("phoneLink").innerText = data.phone;
+
+        document.getElementById("websiteLink").href = links.website;
+        document.getElementById("websiteLink").innerText = data.website;
+
+        // Education section
+        document.getElementById("education").innerText = data.education;
+        data.educationList.forEach((education) => {
+            let container = document.createElement("div");
+            container.className = "flex flex-row ml-12 mt-8";
+
+            let dateDiv = document.createElement("div");
+            dateDiv.className = "w-[600px]";
+
+            let date = document.createElement("span");
+            date.innerText = education.date;
+            date.className = "text-[80px] text-secondBlack";
+            dateDiv.appendChild(date);
+
+            let detailsDiv = document.createElement("div");
+
+            let degree = document.createElement("span");
+            degree.innerText = education.degree;
+            degree.className = "text-[80px] text-firstBlack font-bold";
+
+            let br = document.createElement("br");
+
+            let name = document.createElement("span");
+            name.innerText = education.name;
+            name.className = "text-[60px] text-firstBlack italic";
+
+            detailsDiv.appendChild(degree);
+            detailsDiv.appendChild(br);
+            detailsDiv.appendChild(name);
+
+            container.appendChild(dateDiv);
+            container.appendChild(detailsDiv);
+
+            document.getElementById("educationSection").appendChild(container);
+        });
+
+        // Skills section
+        document.getElementById("skills").innerText = data.skills;
+        data.skillsArray.forEach((skill) => {
+            let li = document.createElement("li");
+            li.innerText = skill;
+            li.className = "text-[80px] text-firstBlack";
+            document.getElementById("skillsList").appendChild(li);
+        });
+
+        // Languages section
+        document.getElementById("languages").innerText = data.languages;
+        data.languagesArray.forEach((language) => {
+            let li = document.createElement("li");
+            li.innerText = language;
+            li.className = "text-[80px] text-firstBlack";
+            document.getElementById("languagesList").appendChild(li);
+        });
+
+        // Experience section
+        document.getElementById("experience").innerText = data.experience;
+        data.experienceArray.forEach((experience) => {
+            let container = document.createElement("div");
+            container.className = "flex flex-row ml-12 mt-8";
+
+            let dateDiv = document.createElement("div");
+            dateDiv.className = "w-[600px]";
+
+            let date = document.createElement("span");
+            date.innerText = experience.date;
+            date.className = "text-[80px] text-secondBlack";
+            dateDiv.appendChild(date);
+
+            let detailsDiv = document.createElement("div");
+
+            let degree = document.createElement("span");
+            degree.innerText = experience.position;
+            degree.className = "text-[80px] text-firstBlack font-bold";
+
+            let br = document.createElement("br");
+            let company = document.createElement("span");
+
+            company.innerText = experience.company;
+            company.className = "text-[60px] text-firstBlack italic";
+
+            let comapnyLinkSeparator = document.createElement("span");
+            comapnyLinkSeparator.innerText = ", ";
+            comapnyLinkSeparator.className =
+                "text-[60px] text-firstBlack italic";
+
+            let link = document.createElement("a");
+            link.href = experience.link;
+            link.innerText = experience.linkName;
+            link.className = "text-[60px] text-firstBlack italic underline";
+
+            detailsDiv.appendChild(degree);
+            detailsDiv.appendChild(br);
+            detailsDiv.appendChild(company);
+            detailsDiv.appendChild(comapnyLinkSeparator);
+            detailsDiv.appendChild(link);
+
+            container.appendChild(dateDiv);
+            container.appendChild(detailsDiv);
+
+            document.getElementById("experienceSection").appendChild(container);
+        });
+    </script>
+</html>
