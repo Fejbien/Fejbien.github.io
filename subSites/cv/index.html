@@ -23,7 +23,7 @@
         class="bg-blue-700 flex flex-col justify-center items-center overflow-auto"
         id="body"
     >
-        <div id="CV" class="bg-white w-[2480px] h-[3508px]">
+        <div id="CV" class="bg-white">
             <div id="header" class="bg-firstBlack">
                 <span
                     id="name"
@@ -125,8 +125,9 @@
                     <div
                         class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
                     ></div>
-                    <div class="flex flex-row ml-12">
-                        <ul id="skillsList" class="list-disc ml-[108px]"></ul>
+                    <div class="flex flex-row ml-12 gap-x-64">
+                        <ul id="skillsList1" class="list-disc ml-[108px]"></ul>
+                        <ul id="skillsList2" class="list-disc ml-[108px]"></ul>
                     </div>
                 </div>
                 <div id="languagesSection" class="mt-10">
@@ -145,6 +146,7 @@
                         ></ul>
                     </div>
                 </div>
+                <!--
                 <div id="experienceSection" class="mt-10">
                     <span
                         id="experience"
@@ -155,10 +157,26 @@
                         class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
                     ></div>
                 </div>
+            -->
+                <div id="projectsSection" class="mt-10">
+                    <span
+                        id="projects"
+                        class="text-9xl text-firstBlack font-bold"
+                        >...
+                    </span>
+                    <div
+                        class="w-full h-2 bg-break block mx-2 mt-8 mb-5 rounded-full"
+                    >
+                        <div class="flex flex-row ml-12 mt-8"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
     <script>
+        document.getElementById("CV").style.height = "3508px"; // 1 page
+        //document.getElementById("CV").style.height = "7016px"; // 2 pages
+        document.getElementById("CV").style.width = "2480px";
         document.getElementById("body").style.zoom = "25%";
 
         let links = {
@@ -167,6 +185,7 @@
             circle: "https://net.cs.put.poznan.pl",
             number: "tel:+48511221437",
             email: "mailto:fabian.sucholas123@gmail.com",
+            atari: "https://github.com/Fejbien/atari-museum",
         };
 
         let dataPL = {
@@ -219,6 +238,23 @@
                     link: links.circle,
                 },
             ],
+            // Projects section
+            projects: "Projekty",
+            projectsArray: [
+                {
+                    name: "Katalog muzeum Atari",
+                    description:
+                        "Aplikacja CRUD dla katalogowania eksponatów, z uwierzytelnianiem i autoryzacją użytkowników.",
+                    link: links.atari,
+                    linkName: "GitHub",
+                    technologies: [
+                        "Astro",
+                        "React.js",
+                        "Tailwind.css",
+                        "Supabase",
+                    ],
+                },
+            ],
         };
 
         let dataEN = {
@@ -267,6 +303,23 @@
                     date: "2023 - present",
                     linkName: "PUT.NET",
                     link: links.circle,
+                },
+            ],
+            // Projects section
+            projects: "Projects",
+            projectsArray: [
+                {
+                    name: "Atari museum catalog",
+                    description:
+                        "CRUD application for cataloging exhibits, with user authentication and authorization.",
+                    link: links.atari,
+                    linkName: "GitHub",
+                    technologies: [
+                        "Astro",
+                        "React.js",
+                        "Tailwind.css",
+                        "Supabase",
+                    ],
                 },
             ],
         };
@@ -369,11 +422,13 @@
 
         // Skills section
         document.getElementById("skills").innerText = data.skills;
-        data.skillsArray.forEach((skill) => {
+        data.skillsArray.forEach((skill, index) => {
             let li = document.createElement("li");
             li.innerText = skill;
             li.className = "text-[80px] text-firstBlack";
-            document.getElementById("skillsList").appendChild(li);
+            if (index % 2 === 0)
+                document.getElementById("skillsList2").appendChild(li);
+            else document.getElementById("skillsList1").appendChild(li);
         });
 
         // Languages section
@@ -386,6 +441,7 @@
         });
 
         // Experience section
+        /*
         document.getElementById("experience").innerText = data.experience;
         data.experienceArray.forEach((experience) => {
             let container = document.createElement("div");
@@ -431,6 +487,54 @@
             container.appendChild(detailsDiv);
 
             document.getElementById("experienceSection").appendChild(container);
+        });
+        */
+
+        // Projects section
+        document.getElementById("projects").innerText = data.projects;
+        data.projectsArray.forEach((project) => {
+            let container = document.createElement("div");
+            container.className = "flex flex-row ml-12 mt-8";
+
+            let detailsDiv = document.createElement("div");
+            detailsDiv.className = "w-[70%]";
+
+            let name = document.createElement("span");
+            name.innerText = project.name;
+            name.className = "text-[80px] text-firstBlack font-bold";
+
+            let br = document.createElement("br");
+
+            let description = document.createElement("span");
+            description.innerText = project.description;
+            description.className = "text-[60px] text-firstBlack";
+
+            let link = document.createElement("a");
+            link.href = project.link;
+            link.target = "_blank";
+            link.innerText = project.linkName;
+            link.className = "text-[60px] text-firstBlack underline block mt-4";
+
+            detailsDiv.appendChild(name);
+            detailsDiv.appendChild(br);
+            detailsDiv.appendChild(description);
+            detailsDiv.appendChild(link);
+
+            let technologiesDiv = document.createElement("ul");
+            technologiesDiv.className =
+                "w-[30%] flex flex-col justify-center list-disc";
+
+            project.technologies.forEach((tech) => {
+                let techSpan = document.createElement("li");
+                techSpan.innerText = tech;
+                techSpan.className = "text-[60px] text-firstBlack";
+                technologiesDiv.appendChild(techSpan);
+            });
+
+            container.appendChild(detailsDiv);
+            container.appendChild(technologiesDiv);
+
+            document.getElementById("projectsSection").appendChild(container);
         });
     </script>
 </html>
