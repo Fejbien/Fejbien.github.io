@@ -1,173 +1,219 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="icon.ico" />
-        <title>:)</title>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap");
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
+    <title>Fabian Sucholas - Junior Full Stack Developer, Poznań</title>
+    <meta
+      name="description"
+      content="Fabian Sucholas, junior full stack developer based in Poznań, Poland. Side projects include a DSM51 8051 emulator and assembler (React, TypeScript) and Miri, a Flutter task manager and sharing app."
+    />
+    <meta name="author" content="Fabian Sucholas" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fabiansucholas.me/" />
 
-            :root {
-                --bg: #f5f2ec;
-                --ink: #1a1714;
-                --muted: #8a8278;
-                --rule: #c8c0b4;
-                --accent: #b84c2e;
-            }
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fabiansucholas.me/" />
+    <meta
+      property="og:title"
+      content="Fabian Sucholas - Junior Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Junior full stack developer from Poznań. Building a DSM51 8051 emulator in React/TypeScript and Miri, a Flutter task manager."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="pl_PL" />
 
-            html,
-            body {
-                height: 100%;
-            }
+    <link rel="alternate" hreflang="en" href="https://fabiansucholas.me/" />
+    <link
+      rel="alternate"
+      hreflang="pl"
+      href="https://fabiansucholas.me/?lang=pl"
+    />
 
-            body {
-                background: var(--bg);
-                color: var(--ink);
-                font-family: "IBM Plex Mono", monospace;
-                font-size: 13px;
-                line-height: 1.7;
-                padding: 3rem 2rem;
-                max-width: 680px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-            }
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fabian Sucholas",
+        "jobTitle": "Junior Full Stack Developer",
+        "url": "https://fabiansucholas.me/",
+        "sameAs": [
+          "https://www.linkedin.com/in/fabian-sucholas-8547b7262/",
+          "https://github.com/Fejbien"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Poznań",
+          "addressCountry": "PL"
+        }
+      }
+    </script>
 
-            main {
-                flex: 1;
-            }
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "DSM51 All in One",
+          "url": "https://8051.fabiansucholas.me",
+          "description": "A browser-based DSM51 / 8051 microcontroller emulator and assembler with Monaco Editor, assembly intellisense, and cycle-accurate simulation.",
+          "applicationCategory": "DeveloperApplication",
+          "programmingLanguage": ["TypeScript", "React", "8051 Assembly"],
+          "author": { "@type": "Person", "name": "Fabian Sucholas" }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Miri",
+          "description": "A Flutter task manager and sharing app built with Riverpod, ObjectBox, and Supabase.",
+          "applicationCategory": "MobileApplication",
+          "operatingSystem": "Android, iOS",
+          "programmingLanguage": ["Dart", "Flutter"],
+          "author": { "@type": "Person", "name": "Fabian Sucholas" }
+        }
+      ]
+    </script>
 
-            .name {
-                font-family: "Playfair Display", serif;
-                font-size: 2rem;
-                font-weight: 700;
-                letter-spacing: -0.5px;
-                line-height: 1.1;
-                margin-bottom: 0.4rem;
-            }
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-pl" onclick="setLang('pl')">PL</button>
+    </div>
 
-            .role {
-                color: var(--muted);
-                font-size: 11px;
-                letter-spacing: 0.15em;
-                text-transform: uppercase;
-            }
+    <main>
+      <header>
+        <h1 class="name">Fabian Sucholas</h1>
+        <p
+          class="role"
+          data-en="Junior Full Stack Developer"
+          data-pl="Junior Full Stack Developer"
+        >
+          Junior Full Stack Developer
+        </p>
+      </header>
 
-            .section-label {
-                font-size: 10px;
-                letter-spacing: 0.2em;
-                text-transform: uppercase;
-                color: var(--muted);
-                border-bottom: 1px solid var(--rule);
-                padding-bottom: 0.4rem;
-                margin-bottom: 1.5rem;
-                margin-top: 2.5rem;
-            }
+      <h2 class="section-label" data-en="Side projects" data-pl="Projekty">
+        Side projects
+      </h2>
 
-            .project {
-                display: grid;
-                grid-template-columns: 1fr auto;
-                align-items: baseline;
-                gap: 1rem;
-                padding: 0.9rem 0;
-                border-bottom: 1px solid var(--rule);
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .project:last-child {
-                border-bottom: none;
-            }
-            .project:hover .proj-name {
-                color: var(--accent);
-            }
-
-            .proj-name {
-                font-family: "Playfair Display", serif;
-                font-size: 1rem;
-                font-weight: 400;
-                transition: color 0.15s;
-            }
-
-            .proj-stack {
-                font-size: 10px;
-                color: var(--muted);
-                letter-spacing: 0.05em;
-                margin-top: 0.15rem;
-            }
-
-            footer {
-                border-top: 1px solid var(--rule);
-                padding-top: 1rem;
-                margin-top: 1rem;
-                font-size: 10px;
-                color: var(--muted);
-                letter-spacing: 0.08em;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            footer a {
-                color: inherit;
-                text-decoration: none;
-                transition: color 0.15s;
-            }
-
-            footer a:hover {
-                color: var(--accent);
-            }
-        </style>
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="name">Fabian Sucholas</div>
-                <div class="role">Full Stack Developer</div>
-            </header>
-
-            <div class="section-label">Side projects</div>
-
-            <a
-                href="https://8051.fabiansucholas.me"
-                target="_blank"
-                rel="noopener"
-                class="project"
+      <nav aria-label="Projects">
+        <a
+          href="https://8051.fabiansucholas.me"
+          target="_blank"
+          rel="noopener"
+          class="project"
+          data-aria-en="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
+          data-aria-pl="DSM51 All in One - React, TypeScript, Asembler 8051, Monaco Editor"
+          aria-label="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
+        >
+          <div>
+            <div class="proj-name">DSM51 All in one</div>
+            <div
+              class="proj-stack"
+              data-en="React · TypeScript · 8051 Assembly · Monaco Editor"
+              data-pl="React · TypeScript · Asembler 8051 · Monaco Editor"
             >
-                <div>
-                    <div class="proj-name">DSM-51 All in one</div>
-                    <div class="proj-stack">
-                        React · TypeScript · 8051 Assembly · Monaco Editor
-                    </div>
-                </div>
-            </a>
+              React · TypeScript · 8051 Assembly · Monaco Editor
+            </div>
+          </div>
+        </a>
 
-            <a href="#" class="project">
-                <div>
-                    <div class="proj-name">Miri</div>
-                    <div class="proj-stack">
-                        Flutter · Riverpod · ObjectBox · Supabase
-                    </div>
-                </div>
-            </a>
-        </main>
-
-        <footer>
-            <a
-                href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn</a
+        <a
+          href="#"
+          class="project"
+          data-aria-en="Miri - Flutter, Riverpod, ObjectBox, Supabase"
+          data-aria-pl="Miri - Flutter, Riverpod, ObjectBox, Supabase"
+        >
+          <div>
+            <div class="proj-name">Miri</div>
+            <div
+              class="proj-stack"
+              data-en="Flutter · Riverpod · ObjectBox · Supabase"
+              data-pl="Flutter · Riverpod · ObjectBox · Supabase"
             >
-            <span>Poznań, Poland</span>
-        </footer>
-    </body>
+              Flutter · Riverpod · ObjectBox · Supabase
+            </div>
+          </div>
+        </a>
+      </nav>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a
+          href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
+          target="_blank"
+          rel="noopener"
+          data-aria-en="Fabian Sucholas on LinkedIn"
+          data-aria-pl="Fabian Sucholas na LinkedIn"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/Fejbien"
+          target="_blank"
+          rel="noopener"
+          data-aria-en="Fabian Sucholas on GitHub"
+          data-aria-pl="Fabian Sucholas na GitHub"
+          >GitHub</a
+        >
+      </div>
+      <address data-en="Poznań, Poland" data-pl="Poznań, Polska">
+        Poznań, Poland
+      </address>
+    </footer>
+
+    <script>
+      function setLang(lang) {
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-en]").forEach((el) => {
+          if (el.dataset[lang]) {
+            el.textContent = el.dataset[lang];
+          }
+        });
+
+        document.querySelectorAll("[data-aria-en]").forEach((el) => {
+          const key = lang === "pl" ? "ariaPl" : "ariaEn";
+          if (el.dataset[key]) {
+            el.setAttribute("aria-label", el.dataset[key]);
+          }
+        });
+
+        document
+          .getElementById("btn-en")
+          .classList.toggle("active", lang === "en");
+        document
+          .getElementById("btn-pl")
+          .classList.toggle("active", lang === "pl");
+
+        try {
+          localStorage.setItem("preferredLang", lang);
+        } catch (e) {}
+      }
+
+      (function initLanguage() {
+        const urlParam = new URLSearchParams(window.location.search).get(
+          "lang",
+        );
+        const savedLang = localStorage.getItem("preferredLang");
+        const browserLang = navigator.language?.startsWith("pl") ? "pl" : "en";
+
+        const finalLang = urlParam || savedLang || browserLang;
+
+        setLang(finalLang);
+      })();
+    </script>
+  </body>
 </html>
