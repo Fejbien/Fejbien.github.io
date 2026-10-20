@@ -1,227 +1,363 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="icon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="icon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
 
-    <title>Fabian Sucholas - Junior Full Stack Developer, Poznań</title>
-    <meta
-      name="description"
-      content="Fabian Sucholas, Junior Full Stack Developer based in Poznań. Side projects include a DSM51 emulator and assembler and Miri, a task manager and sharing app."
-    />
-    <meta name="author" content="Fabian Sucholas" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://fabiansucholas.me/" />
+        <title>Fabian Sucholas - Software Engineer, Poznań</title>
+        <meta
+            name="description"
+            content="Fabian Sucholas, Software Engineer based in Poznań."
+        />
+        <meta name="author" content="Fabian Sucholas" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://fabiansucholas.me/" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fabiansucholas.me/" />
-    <meta
-      property="og:title"
-      content="Fabian Sucholas - Junior Full Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Junior full stack developer from Poznań. Building a DSM51 8051 emulator in React/TypeScript and Miri, a Flutter task manager."
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fabiansucholas.me/" />
+        <meta
+            property="og:title"
+            content="Fabian Sucholas - Software Engineer"
+        />
+        <meta
+            property="og:description"
+            content="Software Engineer from Poznań."
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="pl_PL" />
 
-    <link rel="alternate" hreflang="en" href="https://fabiansucholas.me/" />
-    <link
-      rel="alternate"
-      hreflang="pl"
-      href="https://fabiansucholas.me/?lang=pl"
-    />
+        <link rel="alternate" hreflang="en" href="https://fabiansucholas.me/" />
+        <link
+            rel="alternate"
+            hreflang="pl"
+            href="https://fabiansucholas.me/?lang=pl"
+        />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Fabian Sucholas",
-        "jobTitle": "Junior Full Stack Developer",
-        "url": "https://fabiansucholas.me/",
-        "email": "fabian.sucholas123@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/fabian-sucholas-8547b7262/",
-          "https://github.com/Fejbien"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Poznań",
-          "addressCountry": "PL"
-        }
-      }
-    </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Fabian Sucholas",
+                "jobTitle": "Junior Full Stack Developer",
+                "url": "https://fabiansucholas.me/",
+                "email": "fabian.sucholas123@gmail.com",
+                "sameAs": [
+                    "https://www.linkedin.com/in/fabian-sucholas-8547b7262/",
+                    "https://github.com/Fejbien"
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Poznań",
+                    "addressCountry": "PL"
+                }
+            }
+        </script>
 
-    <script type="application/ld+json">
-      [
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "DSM51 All in One",
-          "url": "https://8051.fabiansucholas.me",
-          "description": "A browser-based DSM51 / 8051 microcontroller emulator and assembler with Monaco Editor, assembly intellisense, and cycle-accurate simulation.",
-          "applicationCategory": "DeveloperApplication",
-          "programmingLanguage": ["TypeScript", "React", "8051 Assembly"],
-          "author": { "@type": "Person", "name": "Fabian Sucholas" }
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Miri",
-          "description": "A Flutter task manager and sharing app built with Riverpod, ObjectBox, and Supabase.",
-          "applicationCategory": "MobileApplication",
-          "operatingSystem": "Android, iOS",
-          "programmingLanguage": ["Dart", "Flutter"],
-          "author": { "@type": "Person", "name": "Fabian Sucholas" }
-        }
-      ]
-    </script>
+        <script type="application/ld+json">
+            [
+                {
+                    "@context": "https://schema.org",
+                    "@type": "SoftwareApplication",
+                    "name": "DSM51 All in One",
+                    "url": "https://8051.fabiansucholas.me",
+                    "description": "A browser-based DSM51 / 8051 microcontroller emulator and assembler with Monaco Editor, assembly intellisense, and cycle-accurate simulation.",
+                    "applicationCategory": "DeveloperApplication",
+                    "programmingLanguage": [
+                        "TypeScript",
+                        "React",
+                        "8051 Assembly"
+                    ],
+                    "author": { "@type": "Person", "name": "Fabian Sucholas" }
+                },
+                {
+                    "@context": "https://schema.org",
+                    "@type": "SoftwareApplication",
+                    "name": "Miri",
+                    "description": "A Flutter task manager and sharing app built with Riverpod, ObjectBox, and Supabase.",
+                    "applicationCategory": "MobileApplication",
+                    "operatingSystem": "Android, iOS",
+                    "programmingLanguage": ["Dart", "Flutter"],
+                    "author": { "@type": "Person", "name": "Fabian Sucholas" }
+                }
+            ]
+        </script>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="lang-toggle" role="group" aria-label="Language switcher">
-      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-      <button id="btn-pl" onclick="setLang('pl')">PL</button>
-    </div>
-
-    <main>
-      <header>
-        <h1 class="name">Fabian Sucholas</h1>
-        <p
-          class="role"
-          data-en="Junior Full Stack Developer"
-          data-pl="Junior Full Stack Developer"
-        >
-          Junior Full Stack Developer
-        </p>
-      </header>
-
-      <h2 class="section-label" data-en="Side projects" data-pl="Projekty">
-        Side projects
-      </h2>
-
-      <nav aria-label="Projects">
-        <a
-          href="https://8051.fabiansucholas.me"
-          target="_blank"
-          rel="noopener"
-          class="project"
-          data-aria-en="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
-          data-aria-pl="DSM51 All in One - React, TypeScript, Asembler 8051, Monaco Editor"
-          aria-label="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
-        >
-          <div>
-            <div class="proj-name">DSM51 All in one</div>
+        <script>
+            try {
+                var t =
+                    localStorage.getItem("theme") ||
+                    (window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "dark"
+                        : "light");
+                document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        </script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="corner">
             <div
-              class="proj-stack"
-              data-en="React · TypeScript · 8051 Assembly · Monaco Editor"
-              data-pl="React · TypeScript · Asembler 8051 · Monaco Editor"
+                class="lang-toggle"
+                role="group"
+                aria-label="Language switcher"
             >
-              React · TypeScript · 8051 Assembly · Monaco Editor
+                <button id="btn-en" class="active" onclick="setLang('en')">
+                    EN
+                </button>
+                <button id="btn-pl" onclick="setLang('pl')">PL</button>
             </div>
-          </div>
-        </a>
 
-        <a
-          href="#"
-          class="project"
-          data-aria-en="Miri - Flutter, Riverpod, ObjectBox, Supabase"
-          data-aria-pl="Miri - Flutter, Riverpod, ObjectBox, Supabase"
-        >
-          <div>
-            <div class="proj-name">Miri</div>
             <div
-              class="proj-stack"
-              data-en="Flutter · Riverpod · ObjectBox · Supabase"
-              data-pl="Flutter · Riverpod · ObjectBox · Supabase"
+                class="lang-toggle theme-toggle"
+                role="group"
+                aria-label="Theme switcher"
             >
-              Flutter · Riverpod · ObjectBox · Supabase
+                <button
+                    id="btn-light"
+                    onclick="setTheme('light')"
+                    aria-label="Light theme"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                        />
+                    </svg>
+                </button>
+                <button
+                    id="btn-dark"
+                    onclick="setTheme('dark')"
+                    aria-label="Dark theme"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                        />
+                    </svg>
+                </button>
             </div>
-          </div>
-        </a>
-      </nav>
-    </main>
+        </div>
 
-    <footer>
-      <div class="footer-links">
-        <a
-          href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
-          target="_blank"
-          rel="noopener"
-          data-aria-en="Fabian Sucholas on LinkedIn"
-          data-aria-pl="Fabian Sucholas na LinkedIn"
-          >LinkedIn</a
-        >
-        <a
-          href="https://github.com/Fejbien"
-          target="_blank"
-          rel="noopener"
-          data-aria-en="Fabian Sucholas on GitHub"
-          data-aria-pl="Fabian Sucholas na GitHub"
-          >GitHub</a
-        >
-        <a
-          href="mailto:fabian.sucholas123@gmail.com"
-          data-aria-en="Email Fabian Sucholas"
-          data-aria-pl="Email Fabian Sucholas"
-          >Email</a
-        >
-      </div>
-      <address data-en="Poznań, Poland" data-pl="Poznań, Polska">
-        Poznań, Poland
-      </address>
-    </footer>
+        <main>
+            <header>
+                <h1 class="name">Fabian Sucholas</h1>
+                <p
+                    class="role"
+                    data-en="Software Engineer"
+                    data-pl="Software Engineer"
+                >
+                    Software Engineer
+                </p>
+            </header>
 
-    <script>
-      function setLang(lang) {
-        document.documentElement.lang = lang;
+            <h2
+                class="section-label"
+                data-en="Experience"
+                data-pl="Doświadczenie"
+            >
+                Experience
+            </h2>
 
-        document.querySelectorAll("[data-en]").forEach((el) => {
-          if (el.dataset[lang]) {
-            el.textContent = el.dataset[lang];
-          }
-        });
+            <nav aria-label="Experience">
+                <div class="project">
+                    <div>
+                        <div
+                            class="proj-name"
+                            data-en="Junior Full Stack Developer @ BeOne"
+                            data-pl="Junior Full Stack Developer @ BeOne"
+                        >
+                            Junior Full Stack Developer @ BeOne
+                        </div>
+                        <div
+                            class="proj-stack"
+                            data-en="Dec 2025 - Present"
+                            data-pl="gru 2025 - obecnie"
+                        >
+                            Dec 2025 - Present
+                        </div>
+                    </div>
+                </div>
 
-        document.querySelectorAll("[data-aria-en]").forEach((el) => {
-          const key = lang === "pl" ? "ariaPl" : "ariaEn";
-          if (el.dataset[key]) {
-            el.setAttribute("aria-label", el.dataset[key]);
-          }
-        });
+                <div class="project">
+                    <div>
+                        <div
+                            class="proj-name"
+                            data-en="Freelance Software Engineer (Flutter, Miri)"
+                            data-pl="Freelance Software Engineer (Flutter, Miri)"
+                        >
+                            Freelance Software Engineer (Flutter, Miri)
+                        </div>
+                        <div
+                            class="proj-stack"
+                            data-en="Apr 2025 - Oct 2026"
+                            data-pl="kwi 2025 - paź 2026"
+                        >
+                            Apr 2025 - Oct 2026
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-        document
-          .getElementById("btn-en")
-          .classList.toggle("active", lang === "en");
-        document
-          .getElementById("btn-pl")
-          .classList.toggle("active", lang === "pl");
+            <h2
+                class="section-label"
+                data-en="Side projects"
+                data-pl="Projekty"
+            >
+                Side projects
+            </h2>
 
-        try {
-          localStorage.setItem("preferredLang", lang);
-        } catch (e) {}
-      }
+            <nav aria-label="Projects">
+                <a
+                    href="https://8051.fabiansucholas.me"
+                    target="_blank"
+                    rel="noopener"
+                    class="project"
+                    data-aria-en="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
+                    data-aria-pl="DSM51 All in One - React, TypeScript, Asembler 8051, Monaco Editor"
+                    aria-label="DSM51 All in One - React, TypeScript, 8051 Assembly, Monaco Editor"
+                >
+                    <div>
+                        <div
+                            class="proj-name"
+                            data-en="51AIO (bachelor project, DSM51 emulator and assembler)"
+                            data-pl="51AIO (projekt inżynierski, emulator i asembler DSM51)"
+                        >
+                            51AIO (bachelor project, DSM51 emulator and
+                            assembler)
+                        </div>
+                        <div
+                            class="proj-stack"
+                            data-en="React · TypeScript · 8051 Assembly · Monaco Editor"
+                            data-pl="React · TypeScript · Asembler 8051 · Monaco Editor"
+                        >
+                            React · TypeScript · 8051 Assembly · Monaco Editor
+                        </div>
+                    </div>
+                </a>
+            </nav>
+        </main>
 
-      (function initLanguage() {
-        const urlParam = new URLSearchParams(window.location.search).get(
-          "lang",
-        );
-        const savedLang = localStorage.getItem("preferredLang");
-        const browserLang = navigator.language?.startsWith("pl") ? "pl" : "en";
+        <footer>
+            <div class="footer-links">
+                <a
+                    href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
+                    target="_blank"
+                    rel="noopener"
+                    data-aria-en="Fabian Sucholas on LinkedIn"
+                    data-aria-pl="Fabian Sucholas na LinkedIn"
+                    >LinkedIn</a
+                >
+                <a
+                    href="https://github.com/Fejbien"
+                    target="_blank"
+                    rel="noopener"
+                    data-aria-en="Fabian Sucholas on GitHub"
+                    data-aria-pl="Fabian Sucholas na GitHub"
+                    >GitHub</a
+                >
+                <a
+                    href="mailto:fabian.sucholas123@gmail.com"
+                    data-aria-en="Email Fabian Sucholas"
+                    data-aria-pl="Email Fabian Sucholas"
+                    >Email</a
+                >
+            </div>
+            <address data-en="Poznań, Poland" data-pl="Poznań, Polska">
+                Poznań, Poland
+            </address>
+        </footer>
 
-        const finalLang = urlParam || savedLang || browserLang;
+        <script>
+            function setLang(lang) {
+                document.documentElement.lang = lang;
 
-        setLang(finalLang);
-      })();
-    </script>
-  </body>
+                document.querySelectorAll("[data-en]").forEach((el) => {
+                    if (el.dataset[lang]) {
+                        el.textContent = el.dataset[lang];
+                    }
+                });
+
+                document.querySelectorAll("[data-aria-en]").forEach((el) => {
+                    const key = lang === "pl" ? "ariaPl" : "ariaEn";
+                    if (el.dataset[key]) {
+                        el.setAttribute("aria-label", el.dataset[key]);
+                    }
+                });
+
+                document
+                    .getElementById("btn-en")
+                    .classList.toggle("active", lang === "en");
+                document
+                    .getElementById("btn-pl")
+                    .classList.toggle("active", lang === "pl");
+
+                try {
+                    localStorage.setItem("preferredLang", lang);
+                } catch (e) {}
+            }
+
+            function setTheme(theme) {
+                const root = document.documentElement;
+                root.classList.add("theme-anim");
+                clearTimeout(window._themeTimer);
+                window._themeTimer = setTimeout(
+                    () => root.classList.remove("theme-anim"),
+                    450,
+                );
+                document.documentElement.setAttribute("data-theme", theme);
+                document
+                    .getElementById("btn-light")
+                    .classList.toggle("active", theme === "light");
+                document
+                    .getElementById("btn-dark")
+                    .classList.toggle("active", theme === "dark");
+                try {
+                    localStorage.setItem("theme", theme);
+                } catch (e) {}
+            }
+
+            (function initTheme() {
+                setTheme(
+                    document.documentElement.getAttribute("data-theme") ||
+                        "light",
+                );
+            })();
+
+            (function initLanguage() {
+                const urlParam = new URLSearchParams(
+                    window.location.search,
+                ).get("lang");
+                const savedLang = localStorage.getItem("preferredLang");
+                const browserLang = navigator.language?.startsWith("pl")
+                    ? "pl"
+                    : "en";
+
+                const finalLang = urlParam || savedLang || browserLang;
+
+                setLang(finalLang);
+            })();
+        </script>
+    </body>
 </html>
