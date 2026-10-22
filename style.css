@@ -76,11 +76,28 @@ body {
     font-size: 13.5px;
     font-weight: 400;
     line-height: 1.75;
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 2rem;
     max-width: 680px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+header {
+    flex-shrink: 0;
+    background: var(--bg);
+    padding-bottom: 0.8rem;
+    z-index: 10;
+}
+
+main {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.2rem;
+    overscroll-behavior: contain;
 }
 
 .name {
@@ -108,7 +125,11 @@ body {
     font-weight: 500;
     border-bottom: 1px solid var(--rule);
     padding-bottom: 0.5rem;
-    margin: 2.6rem 0 0.3rem;
+    margin: 1.8rem 0 0.3rem;
+}
+
+.section-label:first-of-type {
+    margin-top: 0.8rem;
 }
 
 .project {
@@ -143,10 +164,17 @@ body {
     font-weight: 400;
 }
 
+.bottom-bar {
+    flex-shrink: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
 footer {
     border-top: 1px solid var(--rule);
     padding-top: 1.3rem;
-    margin-top: auto;
     font-size: 10.2px;
     color: var(--muted);
     letter-spacing: 0.06em;
@@ -186,6 +214,7 @@ footer address {
     overflow: hidden;
     background: var(--bg);
     z-index: 100;
+    flex-shrink: 0;
 }
 
 .lang-toggle {
@@ -200,10 +229,13 @@ footer address {
 .corner button {
     width: 2.6rem;
     height: 1.9rem;
+    min-width: 2.6rem;
+    min-height: 1.9rem;
     padding: 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .lang-toggle button {
@@ -245,4 +277,30 @@ footer address {
     width: 13px;
     height: 13px;
     display: block;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 1.5rem 1.25rem 1.25rem;
+    }
+
+    .corner {
+        position: static;
+        flex-direction: row;
+        align-self: center;
+        margin: 0.75rem auto 16px auto;
+        flex-shrink: 0;
+    }
+
+    .theme-toggle {
+        border-top: none;
+        border-left: 1px solid var(--rule);
+    }
+
+    .corner button {
+        width: 2.5rem;
+        height: 1.85rem;
+        min-width: 2.5rem;
+        min-height: 1.85rem;
+    }
 }

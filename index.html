@@ -101,77 +101,18 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="corner">
-            <div
-                class="lang-toggle"
-                role="group"
-                aria-label="Language switcher"
+        <header>
+            <h1 class="name">Fabian Sucholas</h1>
+            <p
+                class="role"
+                data-en="Software Engineer"
+                data-pl="Software Engineer"
             >
-                <button id="btn-en" class="active" onclick="setLang('en')">
-                    EN
-                </button>
-                <button id="btn-pl" onclick="setLang('pl')">PL</button>
-            </div>
-
-            <div
-                class="lang-toggle theme-toggle"
-                role="group"
-                aria-label="Theme switcher"
-            >
-                <button
-                    id="btn-light"
-                    onclick="setTheme('light')"
-                    aria-label="Light theme"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <circle cx="12" cy="12" r="4" />
-                        <path
-                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                        />
-                    </svg>
-                </button>
-                <button
-                    id="btn-dark"
-                    onclick="setTheme('dark')"
-                    aria-label="Dark theme"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                        />
-                    </svg>
-                </button>
-            </div>
-        </div>
+                Software Engineer
+            </p>
+        </header>
 
         <main>
-            <header>
-                <h1 class="name">Fabian Sucholas</h1>
-                <p
-                    class="role"
-                    data-en="Software Engineer"
-                    data-pl="Software Engineer"
-                >
-                    Software Engineer
-                </p>
-            </header>
-
             <h2
                 class="section-label"
                 data-en="Experience"
@@ -259,35 +200,96 @@
             </nav>
         </main>
 
-        <footer>
-            <div class="footer-links">
-                <a
-                    href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
-                    target="_blank"
-                    rel="noopener"
-                    data-aria-en="Fabian Sucholas on LinkedIn"
-                    data-aria-pl="Fabian Sucholas na LinkedIn"
-                    >LinkedIn</a
+        <div class="bottom-bar">
+            <div class="corner">
+                <div
+                    class="lang-toggle"
+                    role="group"
+                    aria-label="Language switcher"
                 >
-                <a
-                    href="https://github.com/Fejbien"
-                    target="_blank"
-                    rel="noopener"
-                    data-aria-en="Fabian Sucholas on GitHub"
-                    data-aria-pl="Fabian Sucholas na GitHub"
-                    >GitHub</a
+                    <button id="btn-en" class="active" onclick="setLang('en')">
+                        EN
+                    </button>
+                    <button id="btn-pl" onclick="setLang('pl')">PL</button>
+                </div>
+
+                <div
+                    class="lang-toggle theme-toggle"
+                    role="group"
+                    aria-label="Theme switcher"
                 >
-                <a
-                    href="mailto:fabian.sucholas123@gmail.com"
-                    data-aria-en="Email Fabian Sucholas"
-                    data-aria-pl="Email Fabian Sucholas"
-                    >Email</a
-                >
+                    <button
+                        id="btn-light"
+                        onclick="setTheme('light')"
+                        aria-label="Light theme"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="12" cy="12" r="4" />
+                            <path
+                                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                            />
+                        </svg>
+                    </button>
+                    <button
+                        id="btn-dark"
+                        onclick="setTheme('dark')"
+                        aria-label="Dark theme"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                            />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <address data-en="Poznań, Poland" data-pl="Poznań, Polska">
-                Poznań, Poland
-            </address>
-        </footer>
+
+            <footer>
+                <div class="footer-links">
+                    <a
+                        href="https://www.linkedin.com/in/fabian-sucholas-8547b7262/"
+                        target="_blank"
+                        rel="noopener"
+                        data-aria-en="Fabian Sucholas on LinkedIn"
+                        data-aria-pl="Fabian Sucholas na LinkedIn"
+                        >LinkedIn</a
+                    >
+                    <a
+                        href="https://github.com/Fejbien"
+                        target="_blank"
+                        rel="noopener"
+                        data-aria-en="Fabian Sucholas on GitHub"
+                        data-aria-pl="Fabian Sucholas na GitHub"
+                        >GitHub</a
+                    >
+                    <a
+                        href="mailto:fabian.sucholas123@gmail.com"
+                        data-aria-en="Email Fabian Sucholas"
+                        data-aria-pl="Email Fabian Sucholas"
+                        >Email</a
+                    >
+                </div>
+                <address data-en="Poznań, Poland" data-pl="Poznań, Polska">
+                    Poznań, Poland
+                </address>
+            </footer>
+        </div>
 
         <script>
             function updateLangDOM(lang) {
