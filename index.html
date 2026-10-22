@@ -290,7 +290,7 @@
         </footer>
 
         <script>
-            function setLang(lang) {
+            function updateLangDOM(lang) {
                 document.documentElement.lang = lang;
 
                 document.querySelectorAll("[data-en]").forEach((el) => {
@@ -312,6 +312,14 @@
                 document
                     .getElementById("btn-pl")
                     .classList.toggle("active", lang === "pl");
+            }
+
+            function setLang(lang, animate = true) {
+                if (animate && document.startViewTransition) {
+                    document.startViewTransition(() => updateLangDOM(lang));
+                } else {
+                    updateLangDOM(lang);
+                }
 
                 try {
                     localStorage.setItem("preferredLang", lang);
@@ -356,7 +364,7 @@
 
                 const finalLang = urlParam || savedLang || browserLang;
 
-                setLang(finalLang);
+                setLang(finalLang, false);
             })();
         </script>
     </body>
